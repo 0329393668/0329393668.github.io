@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <title>Trang chủ Techmaster</title>
+    <link rel="icon"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAA1VBMVEX///8BsPEAsPAAsfoIq+IEsfZivO0AsvEArfEArfUDsOdZw+Sd3/oAq/Lt+vzg9vvC6v1mw/TZ7vMEtPAAp/L3/Pwst/225fBkzP3N7v+a3+4Ap+MiuN4wv+7s+f+h1/bR8fkjufAhsf0Aou4Ao+ng+fhey+Vt0uvu/fnr9P0ttPMAr9sFqNcItOUHuvwYnu8AuuUVnPADwPZmw+s7ruw0qeJKvOLJ7/YjxOolweAMqP7I5POP2PSw4PhVyvMFoepu0vSm2upcs+pewPyFy/YAvflhvuu4TYIcAAAEgElEQVR4nO3df1PaSBzHcbNJupscAWrWUhtQSDjtiRs8aOUOi9j70ef/kKpzk7DT3mZBYrpLP6//HL9i3ixKJqx4dAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAANvr14pVRLt/XXTjkrlnadRf+xjyjXJ3UXXg88U3i9mtfw2NOjOLUXxg5RiEo3LOQ7HAolbM73NA3X/iChcSjjh+qEZZcx8VwyFKXqGd9V2qkccQrbjgOfEobKXTyWPQDNTdN32yOOqciTFWjaShGuU+K5XR96qlv1594cd5IIZtOeaZ8ngoTIiZeUhxHNs0yqn5Wc3iWZcUqJtf9G0+9hpRPl7+zJgrpTMwGvvpkI4+lu3omhBipZ8UgFLNy2CcVN+v6YhSOaAOFhGXzTrujdnbWZcVdTYIPlbPt9vBDedclt8dnx1XDw4+8kUcpDfqa2VNe/vrw3mjOrtqpVz78R5qjPglC2wvPqmdRuJ9dCu8OvvDw13CnQrcsdFCIwv2gUIZCGQplKNwPCmUolKFQhsL9oFCGQhkKZSjcDwplKJSZWBjzFyok2sK0mUIS32pmF5tZ/oemsCPKF1sCobuqP2JNvDKzReFpWs5mf+rWUPDtCwdpM4XpR83sqVMcCGHaNbxKi4c00c2eXC0bKfSCda/bq3D3KS5f5U7C+bvVO6XW5f26/Jklk/Oq2+2uLrMsbqIwnK1v1lwpisZxUN7VsR95U4cpkCVj0aCYjVigvlnOl+TGF2EThY+Ys4vq/RZE+cF35G+L/TQoROGPh0IU/pyFW24jJN9/pPzKbz/Ltnqm/W8Lbe2FnceTla0wtg6D4uTKn7hJ7gXq6TDPRHHgQSTYeJvv8HSf5LUXHq1aW1qtHjbrfZ1/bi26SnefH9jmRKz/dKa6pV7tgbtY+OUjynutm/U2j9KHJg6uFous/HGir3Sz126xvzS6r/0vDF6KdBXDmWtmO0mx4JTr1tscUmEy0MwOefFbibBfGjm6OkiFRFs4LgsDFJoDhTIUmgmFMhSaCYUyFJoJhTIUmgmFMhSaCYUyFJpppytRthfG95rZofOv3YXrvzSznWlid2H+VjO7cC1fw+xvzWxnya0uZOGo96niVavVosUEs6+wG5WbsxzlfqhCOWht4dZQaBIUotB8KDy8wop3zpP2C1laGDLuO1RpHLOMWl1I3HwkwkB1PuMnHnHtXkPKGeU8UfKXfuxZXeiM+hcX92+V5v8MhN2PUudpF1DlTqdeWO6JsrNQe51m5QR2F2qvtZ0TFJpol8LWwReeb97N8mALycEXHv4aotBEKJSh0EwolKHQTCiUodBMKJSh0EwolKHQTCiUWV+ov+Yd2H0linDdXzp33dDqQie7bVfpvD/PbNybKBXmo1kolDu+Iu8m9m3cmygVsmC59GOlx89mqd1X9SfCoVT9f7hihwobd0HLezGengyq9mJs2Fq4PRSa5CcoHD+n0ImsKiTqfVBKFr23yWPhMwLtKqS6/ev/e4ZjT+Hpl/nr57j80QcOAAAAAAAAAAAAAAAAAAfuK5Df2CxAQwH7AAAAAElFTkSuQmCC">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="main">
+        <div id="header">
+            <div id="header-logo">
+                <img style="width: 100%;height: 80%;"
+                    src="https://techmaster.vn/resources/image/logo-techmaster/white/white_200x74.png"
+                    alt="Logo Techmaster">
+            </div>
+            <div id="nav">
+                <ul class="nav-menu">
+                    <li class="js-btn-menu" id="js-btn-menu">
+                        <a href="#">KHÓA HỌC <i style="font-weight: bold;font-size: 16px;"
+                                class="fa-solid fa-caret-down"></i>
+                        </a>
+
+                        <div class="nav-menu-item">
+                            <div style="border-bottom: 1px solid #f3f3f3;height: 53px;">
+                                <div class="sub-nav">
+                                    <div class="sub-nav-item sub-nav-item1 sub-nav-active">
+                                        <i class="ti-book"></i> CHUYÊN NGÀNH
+
+                                    </div>
+                                    <div class="sub-nav-item sub-nav-item2">
+                                        <i class="ti-user"></i> ĐỐI TƯỢNG
+                                    </div>
+                                    <div class="sub-nav-item sub-nav-item3">
+                                        HÌNH THỨC HỌC
+                                    </div>
+                                    <div class="sub-nav-item">
+                                        DOANH NGHIỆP
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="content">
+                                    <div class="sub-content sub-content1">
+                                        <div class="sub-item">
+                                            <div class="sub-item-title">
+                                                WEB FRONT END
+                                            </div>
+                                            <a href="#">Bootcamp Web Front End </a>
+                                            <a href="#">Web Front End + React </a>
+                                        </div>
+                                        <div class="sub-item">
+                                            <div class="sub-item-title">
+                                                WEB BACK END
+                                            </div>
+                                            <a href="#">Fullstack Java Spring Boot </a>
+                                            <a href="#">Fullstack PHP Laravel </a>
+                                        </div>
+                                        <div class="sub-item">
+                                            <div class="sub-item-title">
+                                                DEVOPS & AWS
+                                            </div>
+                                            <a href="#">DevOps </a>
+                                            <a href="#">Amazon Web Service </a>
+                                            <a href="#">Linux Certified Professional </a>
+                                        </div>
+                                        <div class="sub-item">
+                                            <div class="sub-item-title">
+                                                MOBILE
+                                            </div>
+                                            <a href="#">Apple IOS </a>
+                                            <a href="#">Google Flutter </a>
+                                            <a href="#">React Native </a>
+                                        </div>
+                                        <div class="sub-item">
+                                            <div class="sub-item-title">
+                                                Luyện thi
+                                            </div>
+                                            <a href="#">Kỹ sư CNTT Nhật Bản </a>
+
+                                        </div>
+                                        <div class="sub-item">
+                                            <div class="sub-item-title">
+                                                STEM
+                                            </div>
+                                            <a href="#">Lego Robot Inventor </a>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="sub-content sub-content2" style="display: none;">
+                                        <div class="sub-item">
+                                            <div class="sub-item-title">
+                                                NGƯỜI MỚI BẮT ĐẦU
+                                            </div>
+                                            <a href="#">Bootcamp Web Front End </a>
+                                            <a href="#">Web Front End + React </a>
+                                            <a href="#">Fullstack Java Spring Boot </a>
+                                            <a href="#">Google Flutter </a>
+                                            <a href="#">Apple IOS </a>
+
+                                        </div>
+                                        <div class="sub-item">
+                                            <div class="sub-item-title">
+                                                SINH VIÊN CNTT
+                                            </div>
+                                            <a href="#">Java Spring Boot </a>
+                                            <a href="#">PHP Laravel </a>
+                                            <a href="#">ReactJs </a>
+
+                                        </div>
+                                        <div class="sub-item">
+                                            <div class="sub-item-title">
+                                                LẬP TRÌNH VIÊN
+                                            </div>
+                                            <a href="#">DevOps </a>
+                                            <a href="#">Amazon Web Service </a>
+                                        </div>
+                                        <div class="sub-item">
+                                            <div class="sub-item-title">
+                                                HỌC SINH
+                                            </div>
+                                            <a href="#">Lego Robot Inventor </a>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="sub-content sub-content3" style="display: none;">
+                                        <div class="sub-item">
+                                            <div class="sub-item-title">
+                                                DÀI HẠN
+                                            </div>
+                                            <a href="#">Bootcamp Web Front End </a>
+                                            <a href="#">Web Front End + React </a>
+                                            <a href="#">Fullstack Java Spring Boot </a>
+                                            <a href="#">Fullstack PHP Laravel </a>
+                                            <a href="#">Google Flutter </a>
+                                            <a href="#">Apple IOS </a>
+
+                                        </div>
+                                        <div class="sub-item">
+                                            <div class="sub-item-title">
+                                                NGẮN HẠN
+                                            </div>
+                                            <a href="#">Java Spring Boot </a>
+                                            <a href="#">Thiết Kế Cơ Sở Dữ Liệu </a>
+                                            <a href="#">Thiết Kế UI/UX </a>
+                                            <a href="#">ReactJs </a>
+                                            <a style="font-weight: bold;" href="#">Xem Thêm </a>
+                                        </div>
+                                        <div class="sub-item">
+                                            <div class="sub-item-title">
+                                                ONLINE
+                                            </div>
+                                            <a href="#">Java Cơ Bản </a>
+                                            <a href="#">Spring Boot </a>
+                                            <a href="#">React Native </a>
+                                            <a href="#">IOS Swift </a>
+                                            <a style="font-weight: bold;" href="#">Xem Thêm </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#">SẢN PHẨM HỌC VIÊN</a></li>
+                    <li><a href="#">KHAI GIẢNG</a></li>
+                    <li><a href="#">BLOG</a></li>
+                    <li><a href="#">TRẢI NGHIỆM</a></li>
+                    <li><a href="#">CHÚNG TÔI <i style="font-weight: bold;font-size: 16px;"
+                                class="fa-solid fa-caret-down"></i>
+                            <ul class="nav-menu-sub">
+                                <li><a href="#">Trung tâm</a></li>
+                                <li><a href="#">Quy định chung</a></li>
+                                <li><a href="#">Giảng viên</a></li>
+                                <li><a href="#">Hướng dẫn đăng kí học</a></li>
+                            </ul>
+                    </li>
+                </ul>
+                <div class="nav-shop">
+                    <i style="font-size: 24px;line-height: 60px;" class="ti-shopping-cart"></i>
+                </div>
+                <div class="nav-user">
+                    <img style="width: 30px; height: 30px;margin:0 30px;border-radius: 30px;line-height: 60px;"
+                        src="https://techmaster.vn/resources/image/anonymous-user.jpg" alt="">
+                    <ul class="nav-menu-sub1">
+                        <li><a href="#">Trang quản trị</a></li>
+                        <li><a href="#">Lớp học của tôi</a></li>
+                        <li><a href="#">Lịch sử giao dịch</a></li>
+                        <li><a href="#">Hồ sơ cá nhân</a></li>
+                        <li><a href="#">Đăng xuất</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-max">
+            <div class="container-card">
+                <div class="card-item">
+                    <div class="card">
+                        <div class="logo-item">
+                            <img class="img-boder" src="https://media.techmaster.vn/api/static/36/bu7v5ak51co41h2qctt0"
+                                alt="ảnh">
+                        </div>
+                        <div class="content-item">
+                            <div class="header-item">
+                                Java cấu trúc dữ liệu - giải thuật
+                            </div>
+                            <div class="icon-item">
+                                <p>
+                                    Onlab
+                                </p>
+                                <p>
+                                    5 <i class="fa-solid fa-star"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card">
+                        <div class="logo-item">
+                            <img class="img-boder"
+                                src="https://media.techmaster.vn/api/static/bub3enc51co7s932dsk0/ZuedW7J1" alt="ảnh">
+                        </div>
+                        <div class="content-item">
+                            <div class="header-item">
+                                Java căn bản
+                            </div>
+                            <div class="icon-item">
+                                <p>
+                                    Onlab
+                                </p>
+                                <p>
+                                    5 <i class="fa-solid fa-star"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card">
+                        <div class="logo-item">
+                            <img class="img-boder" src="https://media.techmaster.vn/api/static/36/bu7v9ks51co41h2qcttg"
+                                alt="ảnh">
+                        </div>
+                        <div class="content-item">
+                            <div class="header-item">
+                                Spring Boot - Web Back End
+                            </div>
+                            <div class="icon-item">
+                                <p>
+                                    Onlab
+                                </p>
+                                <p>
+                                    5 <i class="fa-solid fa-star"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card">
+                        <div class="logo-item">
+                            <img class="img-boder" src="https://media.techmaster.vn/api/static/36/bu803kc51co41h2qctug"
+                                alt="ảnh">
+                        </div>
+                        <div class="content-item">
+                            <div class="header-item">
+                                Lập trình Web - API - Microservice bằng Golang
+                            </div>
+                            <div class="icon-item">
+                                <p>
+                                    Onlab
+                                </p>
+                                <p>
+                                    5 <i class="fa-solid fa-star"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card">
+                        <div class="logo-item">
+                            <img class="img-boder"
+                                src="https://media.techmaster.vn/api/static/brbgh4451coepbqoch60/eQcu6FM-" alt="ảnh">
+                        </div>
+                        <div class="content-item">
+                            <div class="header-item">
+                                Lập trình Lego Robot Inventor
+                            </div>
+                            <div class="icon-item">
+                                <p>
+                                    Onlab
+                                </p>
+                                <p>
+                                    5 <i class="fa-solid fa-star"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card">
+                        <div class="logo-item">
+                            <img class="img-boder" src="https://devops.techmaster.vn/resources/image/banner_devops.png"
+                                alt="ảnh">
+                        </div>
+                        <div class="content-item">
+                            <div class="header-item">
+                                Lộ trình DevOps
+                            </div>
+                            <div class="icon-item">
+                                <p>
+                                    Onlab
+                                </p>
+                                <p>
+                                    5 <i class="fa-solid fa-star"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card">
+                        <div class="logo-item">
+                            <img class="img-boder" src="https://devops.techmaster.vn/resources/image/banner_devops.png"
+                                alt="ảnh">
+                        </div>
+                        <div class="content-item">
+                            <div class="header-item">
+                                Python cho người mới bắt đầu
+                            </div>
+                            <div class="icon-item">
+                                <p>
+                                    Onlab
+                                </p>
+                                <p>
+                                    5 <i class="fa-solid fa-star"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card">
+                        <div class="logo-item">
+                            <img class="img-boder" src="https://media.techmaster.vn/api/static/36/bu7vt2451co5836g4l70"
+                                alt="ảnh">
+                        </div>
+                        <div class="content-item">
+                            <div class="header-item">
+                                Thiết kế - Lập trình cơ sở dữ liệu
+                            </div>
+                            <div class="icon-item">
+                                <p>
+                                    Onlab
+                                </p>
+                                <p>
+                                    5 <i class="fa-solid fa-star"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card">
+                        <div class="logo-item">
+                            <img class="img-boder"
+                                src="https://media.techmaster.vn/api/static/bub3enc51co7s932dsk0/bjxnxQi0" alt="ảnh">
+                        </div>
+                        <div class="content-item">
+                            <div class="header-item">
+                                Lập trình iOS Swift căn bản cập nhật 2023
+                            </div>
+                            <div class="icon-item">
+                                <p>
+                                    Onlab
+                                </p>
+                                <p>
+                                    5 <i class="fa-solid fa-star"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-footer">
+            <footer>
+                <div class="row">
+                    <div class="footer-content">
+                        <ul class="footer-info">
+                            <h4>CHỦ SỞ HỮU WEBSITE</h4>
+                            <li> <a href="/" target="_blank">Công ty TNHH TechMaster Vietnam Ltd </a> </li>
+                            <li> <span>Số ĐKDN: 0105392153 </span> </li>
+                            <li> <span>Ngày cấp: 4-7-2011 </span> </li>
+                            <li> <span>Nơi cấp: Sở kế hoạch - đầu tư Hà nội </span> </li>
+                            <li> <span>Người đại diện pháp luật: Trịnh Minh Cường </span> </li>
+                        </ul>
+                    </div>
+                    <div class="footer-content" style="width: 200px;">
+                        <ul class="footer-info">
+                            <h4>GIỚI THIỆU</h4>
+                            <li> <a href="/trungtam/trung-tam" target="_blank">Học viện CNTT TechMaster </a> </li>
+                            <li> <a href="/trungtam/giang-vien" target="_blank">Giảng viên </a> </li>
+                            <li> <a href="/trungtam/quy-dinh-chung" target="_blank">Quy định </a> </li>
+                            <li> <a href="/trungtam/huong-dan-mua-khoa-hoc" target="_blank">Hướng dẫn mua khóa học </a>
+                            </li>
+                            <li> <a href="/trungtam/uu-dai-va-hoan-tra-hoc-phi" target="_blank">Ưu đãi và hoàn trả học
+                                    phí </a> </li>
+                            <li> <a href="/trungtam/bao-ve-thong-tin-khach-hang" target="_blank">Bảo vệ thông tin khách
+                                    hàng </a> </li>
+                        </ul>
+                    </div>
+                    <div class="footer-content" style="width: 330px;">
+                        <ul class="footer-info">
+                            <h4>TƯ VẤN TUYỂN SINH</h4>
+                            <li> <a href="tel:0382416368" target="_blank">Nguyễn Thanh Hương - 0382416368 </a>- <a
+                                    href="mailto:huong@techmaster.vn" target="_blank">huong@techmaster.vn</a> </li>
+                            <li> <a href="tel:0963023185" target="_blank">Phạm Thị Mẫn - 0963023185 </a>- <a
+                                    href="mailto:phamman@techmaster.vn" target="_blank">phamman@techmaster.vn</a> </li>
+                            <li> <a href="tel:0987273764" target="_blank">Dương Đức Thịnh - 0987273764 </a>- <a
+                                    href="mailto:thinh@techmaster.vn" target="_blank">thinh@techmaster.vn</a> </li>
+                            <h4 style="margin-top: 25px;">TƯ VẤN ĐÀO TẠO DOANH NGHIỆP</h4>
+                            <li> <a href="tel:0382416368" target="_blank">Nguyễn Thanh Hương - 0382416368 </a>- <a
+                                    href="mailto:huong@techmaster.vn" target="_blank">huong@techmaster.vn</a> </li>
+                        </ul>
+                    </div>
+                    <div class="footer-content" style="width: 330px;">
+                        <ul class="footer-info">
+                            <h4>ĐỊA CHỈ</h4>
+                            <li> <a href="https://g.page/TechmasterVN?share" target="_blank">Quận Hai Bà Trưng: 14 ngõ 4
+                                    Nguyễn Đình Chiểu </a> </li>
+                            <li> <a href="https://www.google.com/maps/place/Techmaster/@20.9980822,105.7942766,18.82z/data=!4m15!1m8!3m7!1s0x3135acba7ddb0f43:0xe7d7c05f85f830a!2zNDggUC4gVOG7kSBI4buvdSwgVHJ1bmcgVsSDbiwgVOG7qyBMacOqbSwgSMOgIE7hu5lpIDEwMDAw!3b1!8m2!3d20.9980103!4d105.7944382!16s%2Fg%2F11hl8fy8tx!3m5!1s0x3135ad5e6a49f693:0x13aeab8c73d00e0c!8m2!3d20.9980063!4d105.794338!16s%2Fg%2F11fjxww18p?hl=vi-VN"
+                                    target="_blank">Quận Nam Từ Liêm: tầng 12A, Viwaseen Tower, 48 Tố Hữu </a> </li>
+                            <li> <a href="https://goo.gl/maps/JMy1becGYRL7qy9F9" target="_blank">Quận Cầu Giấy: tầng 5,
+                                    13 Dịch Vọng Hậu </a> </li>
+                            <li>
+                                <ul class="desktop" style="margin-top: 10px;">
+                                    <li style="margin-left: 0"><a class="facebook"
+                                            href="https://www.facebook.com/techmastervn/?fref=ts" target="_blank"><i
+                                                class="fab fa-facebook-square fa-2x"></i></a></li>
+                                    <li><a class="youtube" href="https://www.youtube.com/user/TechMasterVN"
+                                            target="_blank"><i class="fab fa-youtube-square fa-2x"></i></a></li>
+                                    <li><a class="github" href="https://github.com/arrowjs" target="_blank"><i
+                                                class="fab fa-github-square fa-2x"></i></a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+
+
+    </div>
+
+</body>
+
+</html>
