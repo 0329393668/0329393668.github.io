@@ -16,18 +16,18 @@
             box-sizing: border-box;
             list-style-type: none;
             text-decoration: none;
-        
+
         }
-        
+
         html {
             font-family: Arial, Helvetica, sans-serif;
         }
-        
+
         #main {
             background-color: #ffffff;
             width: 100%;
         }
-        
+
         #header {
             display: flex;
             justify-content: space-between;
@@ -42,9 +42,9 @@
             position: fixed;
             z-index: 1;
             top: 0;
-        
+
         }
-        
+
         #header-logo {
             align-items: center;
             text-align: center;
@@ -52,36 +52,38 @@
             display: flex;
             margin: 0 20px;
         }
-        
+
         #nav {
             display: flex;
             text-align: center;
             align-items: center;
         }
-        
+
         #nav {
             height: 60px;
         }
-        
+
         .nav-menu li {
             display: inline-block;
             padding: 0 20px;
-        
-        
+
+
         }
-        
+
         .nav-menu>li>a {
             color: #fff;
             display: inline-block;
             line-height: 60px;
         }
-        
+
         .nav-menu>li>a:hover {
             color: #c4c4c4;
         }
+
         .nav-menu>li:hover>.nav-menu-sub {
             display: block;
         }
+
         .nav-user {
             height: 60px;
             display: flex;
@@ -89,27 +91,45 @@
             align-items: center;
             position: relative;
         }
-        
+
         .nav-shop {
             margin-left: 10px;
         }
-        
+
         .nav-user,
         .nav-shop:hover {
             cursor: pointer;
         }
-        
+
+        .nav-shop {
+            position: relative;
+        }
+
+        .number-shop {
+            position: absolute;
+            top: 6px;
+            right: -12px;
+            width: 17px;
+            height: 20px;
+            background-color: #26a69a;
+            border-radius: 4px;
+            line-height: 20px;
+        }
+
         .nav-tap {
             height: 1px;
             background-color: black;
         }
+
         /* nút Hover Container */
         .nav-menu li:hover .nav-menu-item {
             display: block;
-        } 
+        }
+
         .open {
             display: block !important;
         }
+
         .nav-menu-item {
             display: none;
             position: absolute;
@@ -123,7 +143,7 @@
             overflow: auto;
             box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
         }
-        
+
         .sub-nav {
             display: flex;
             margin: 0px 40px;
@@ -131,18 +151,20 @@
             gap: 40px;
             text-align: center;
             align-items: center;
-        
-        
+
+
         }
+
         .sub-item-title {
             position: relative;
-        
+
         }
+
         .ti-book,
         .ti-user {
             padding-right: 10px;
         }
-        
+
         .sub-nav-item {
             height: 52px;
             display: flex;
@@ -150,6 +172,7 @@
             font-weight: 400;
             cursor: pointer;
         }
+
         .sub-item-title::after {
             background-color: #30598c;
             bottom: 0;
@@ -160,15 +183,15 @@
             position: absolute;
             width: 40px;
         }
-        
+
         .sub-nav-item:hover {
             border-bottom: 1px solid #30598c;
             color: #30598c;
         }
-        
+
         .nav-menu-sub {
             position: absolute;
-            box-shadow: 0 0 10px rgba(0,0,0,.15);
+            box-shadow: 0 0 10px rgba(0, 0, 0, .15);
             display: none;
             left: auto;
             padding: 0;
@@ -176,27 +199,31 @@
             width: 200px;
             z-index: 1000;
         }
+
         .nav-menu-sub li {
             width: 100%;
             height: 40px;
             background-color: white;
         }
-        
+
         .nav-menu-sub a {
             color: #7c7c7c;
             font-size: 15px;
             line-height: 40px;
         }
+
         .nav-menu-sub>li:hover>a {
             color: #fff;
         }
+
         .nav-menu-sub>li:hover {
             background-color: #7c7c7c;
         }
+
         /* làm nút user */
         .nav-menu-sub1 {
             position: absolute;
-            box-shadow: 0 0 10px rgba(0,0,0,.15);
+            box-shadow: 0 0 10px rgba(0, 0, 0, .15);
             display: none;
             left: auto;
             padding: 0;
@@ -204,76 +231,88 @@
             width: 200px;
             top: 60px;
         }
+
         .nav-menu-sub1 li {
             width: 100%;
             height: 40px;
             background-color: #fff;
-            
+
         }
-        
+
         .nav-menu-sub1 a {
             color: #7c7c7c;
             font-size: 15px;
             line-height: 40px;
         }
+
         .nav-menu-sub1>li:hover>a {
             color: #fff;
         }
+
         .nav-menu-sub1>li:hover {
             background-color: #7c7c7c;
         }
+
         .nav-user:hover .nav-menu-sub1 {
             display: block;
         }
+
         /* Chỉnh position  */
         .nav-menu>li>a {
             position: relative;
         }
-        
+
         .container {
             width: 100%;
             max-width: 1140px;
             margin: 0px 40px;
             display: flex;
             flex-wrap: wrap;
-            
+
         }
+
         .content {
             width: 100%;
             margin-bottom: 20px;
-            
+
         }
+
         .sub-content {
             display: flex;
             font-size: 16px;
             gap: 80px;
         }
+
         .sub-item {
             text-align: left;
         }
+
         .sub-item a {
             display: block;
             color: black;
         }
+
         .sub-item-title {
             padding: 20px 0;
             color: #30598c;
             margin-bottom: 10px;
             font-weight: 500;
         }
-        .sub-item a{
+
+        .sub-item a {
             padding: 10px 0;
             font-weight: 400;
         }
+
         .sub-item>a:hover {
             color: #30598c;
         }
-        
+
         .sub-nav-active {
             border-bottom: 1px solid #30598c;
             color: #30598c;
         }
-        
+
         /* Nội Dung Card  */
         .container-max {
             width: 100%;
@@ -282,8 +321,9 @@
             justify-content: center;
             align-items: center;
             background-color: #f4f7fa;
-        
+
         }
+
         .container-card {
             max-width: 1280px;
             height: auto;
@@ -292,26 +332,29 @@
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            justify-content:space-around;
+            justify-content: space-around;
         }
+
         .card-item {
-            box-shadow: 0 2px 4px rgba(0,0,0,.15);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .15);
             width: 380px;
             height: 385px;
             border-radius: 10px;
             background-color: #f4f7fa;
             margin: 20px 0;
         }
+
         .card-item:hover {
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
             cursor: pointer;
         }
-        
+
         .logo-item {
             width: 380px;
             height: 250px;
-        
+
         }
+
         .img-boder {
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
@@ -319,68 +362,79 @@
             height: 100%;
             object-fit: cover;
         }
+
         .content-item {
-            margin: 24px ;
-         }
-         .header-item {
+            margin: 24px;
+        }
+
+        .header-item {
             font-size: 19.2px;
             color: #464646;
             margin-bottom: 24px;
             line-height: 1.5;
-         }
-         .icon-item {
+        }
+
+        .icon-item {
             display: flex;
             justify-content: space-between;
             color: #464646;
             font-size: 14.4px;
-         }
-         .icon-item>p>i {
+        }
+
+        .icon-item>p>i {
             color: #ffd600;
-         }
-         /* Footer */
-         .container-footer {
+        }
+
+        /* Footer */
+        .container-footer {
             width: 100%;
             background-color: #30598c;
-         }
-         .row {
+        }
+
+        .row {
             max-width: 1280px;
             height: auto;
             margin: auto;
             padding: 48px 0;
             display: flex;
             flex-wrap: wrap;
-            justify-content:space-between;
-         }
-         .footer-content {
+            justify-content: space-between;
+        }
+
+        .footer-content {
             padding: 0 10px;
             width: 270px;
-         }
-         .footer-info h4,
-         .footer-info li,
-         .footer-info li a {
+        }
+
+        .footer-info h4,
+        .footer-info li,
+        .footer-info li a {
             color: #fff;
-         }
-         .footer-info h4 {
+        }
+
+        .footer-info h4 {
             font-size: 18px;
             font-weight: 500;
             line-height: 40px;
-         }
-         .footer-info li,
-         .footer-info li a {
+        }
+
+        .footer-info li,
+        .footer-info li a {
             font-size: 14px;
             line-height: 35px;
             font-weight: 400;
-         }
-         .desktop {
+        }
+
+        .desktop {
             display: flex;
             height: 50px;
             justify-content: flex-start;
-         }
-         .desktop li {
+        }
+
+        .desktop li {
             font-size: 1rem;
             margin-right: 20px;
-         }
-         
+        }
     </style>
 </head>
 
@@ -558,7 +612,10 @@
                     </li>
                 </ul>
                 <div class="nav-shop">
-                    <i style="font-size: 24px;line-height: 60px;" class="ti-shopping-cart"></i>
+                    <i style="font-size: 20px;line-height: 60px;" class="fa-sharp fa-solid fa-cart-shopping"></i>
+                    <div class="number-shop">
+                        0
+                    </div>
                 </div>
                 <div class="nav-user">
                     <img style="width: 30px; height: 30px;margin:0 30px;border-radius: 30px;line-height: 60px;"
