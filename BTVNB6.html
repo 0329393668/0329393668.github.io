@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <link rel="stylesheet" href="./main.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            background-color: #f4f4f4;
+
+        }
+
+        .main {
+            display: flex;
+            width: 100%;
+            height: 600px;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+
+        .card {
+            max-width: 300px;
+            height: auto;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            position: relative;
+        }
+
+        .card-over {
+            height: 345px;
+            overflow: hidden;
+        }
+
+        .card-img {
+            width: 300px;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+            transition: all ease-in-out 0.5s;
+
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 90%;
+            transform: scale(1.5);
+            object-fit: cover;
+        }
+
+        .date {
+            width: 50px;
+            height: 50px;
+            background: #ff5641;
+            border-radius: 50%;
+            top: 16px;
+            right: 16px;
+            position: absolute;
+            z-index: 3;
+            color: white;
+            text-transform: uppercase;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+
+        .date .small {
+            font-size: 12px;
+            font-weight: bold;
+
+        }
+
+        .photos {
+            position: absolute;
+            width: 88px;
+            height: 32px;
+            bottom: 0;
+            left: 0;
+            background: #ff5641;
+            z-index: 3;
+            color: white;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .mask {
+            position: absolute;
+            background: black;
+            opacity: 0;
+            height: 250px;
+            width: 100%;
+            top: 0;
+            z-index: 2;
+            transition: all ease-in-out 0.5s;
+        }
+
+        .content {
+            padding: 20px;
+            width: 100%;
+        }
+
+        .content-text {
+            height: auto;
+        }
+
+        h2,
+        h3 {
+            line-height: 30px;
+        }
+
+        h2 {}
+
+        h3 {
+            color: #ff5641;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        p {
+            line-height: 1.5;
+            font-size: 13px;
+            color: #666666;
+        }
+
+        .content-icon {
+            padding: 25px 20px 20px;
+            width: 100%;
+            display: flex;
+        }
+
+        .content-footer {
+            font-size: 13px;
+            color: #666666;
+            margin-right: 20px;
+            font-weight: 200px;
+        }
+        /* HOVER */
+        .card:hover {
+            cursor: pointer;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        .card:hover .card-img {
+            height: 172px;
+            transition: all ease-in-out 0.5s;
+        }
+        .card:hover .card-img img{
+            width: 100%;
+            height: 90%;
+            transform: scale(1.7);
+            object-fit: cover;
+        }
+        .card:hover .mask {
+            opacity: 0.5;
+            height: 172px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="card">
+            <div class="mask"></div>
+            <div class="card-over">
+                <div class="card-img">
+                    <div class="date">
+                        <div>
+                            <div>27</div>
+                            <div class="small">MAR</div>
+                        </div>
+                    </div>
+                    <div class="photos">photos</div>
+                    <img class="card-img"
+                        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg"
+                        alt="Anh">
+                </div>
+                <div class="content">
+                    <div class="content-text">
+                        <h2>
+                            City lights in New York
+                        </h2>
+                        <h3>
+                            The city that never sleeps.
+                        </h3>
+                        <p>
+                            New York, the largest city in the U.S., is an architectural marvel with plenty of historic
+                            monuments, magnificent buildings and countless dazzling skyscrapers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="content-icon">
+                <div class="content-footer">
+                    <i class="fa-regular fa-clock"></i> 6 mins ago
+                </div>
+                <div class="content-footer">
+                    <i class="fa-sharp fa-solid fa-comments"></i> 39 commemts
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
