@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: black;
+    }
+    .wave {
+      position: relative;
+      color: #fff;
+      -webkit-box-reflect: below -12px linear-gradient(transparent, rgba(0,0,0,0.2));
+    }
+    .wave span {
+      position: relative;
+      display: inline-block;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      animation: animate 1.6s ease-in-out infinite ;
+      animation-delay: calc(0.1s * var(--i));
+    }
+    @keyframes animate {
+      0% {
+        transform: translateY(0px);
+      }
+      20% {
+        transform: translateY(-30px);
+      }
+      40%,100% {
+        transform: translateY(0px);
+      }
+      
+    }
+  </style>
+</head>
+<body>
+  <div class="wave">
+    <SPAN style="--i:1;" >T</SPAN>
+    <SPAN style="--i:2;" >e</SPAN>
+    <SPAN style="--i:3;" >c</SPAN>
+    <SPAN style="--i:4;" >h</SPAN>
+    <SPAN style="--i:5;" >m</SPAN>
+    <SPAN style="--i:6;" >a</SPAN>
+    <SPAN style="--i:7;" >s</SPAN>
+    <SPAN style="--i:8;" >t</SPAN>
+    <SPAN style="--i:9;" >e</SPAN>
+    <SPAN style="--i:10;" >r</SPAN>
+    <SPAN style="--i:11;" >.</SPAN>
+    <SPAN style="--i:12;" >.</SPAN>
+    <SPAN style="--i:13;" >.</SPAN>
+
+  </div>
+</body>
+</html>
