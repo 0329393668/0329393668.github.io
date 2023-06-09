@@ -43,49 +43,103 @@
                 position: relative;
             }
 
-
             .heart1 {
-                color: white;
-                font-size: 280px;
                 position: absolute;
+                width: 300px;
+                height: 270px;
                 z-index: 1;
-                animation: heart1 0.84s ease-in-out infinite;
+                animation: heart1 0.8s linear infinite;
+            }
+
+            .heart1:before,
+            .heart1:after {
+                content: "";
+                position: absolute;
+                left: 150px;
+                top: 0;
+                width: 150px;
+                height: 240px;
+                background: white;
+                border-radius: 150px 150px 0 0;
+                transform: rotate(-45deg);
+                transform-origin: 0 100%;
+                animation: heart2 0.8s linear infinite;
+
+            }
+
+            .heart1:after {
+                left: 0;
+                transform: rotate(45deg);
+                transform-origin: 100% 100%;
             }
 
             .heart {
-                color: white;
-                font-size: 400px;
                 position: absolute;
+                width: 450px;
+                height: 405px;
                 z-index: 2;
-                animation: heart 1.68s ease-in-out infinite;
+                animation: heart 1.6s linear infinite;
 
             }
 
+            .heart:before,
+            .heart:after {
+                content: "";
+                position: absolute;
+                left: 225px;
+                top: 0;
+                width: 225px;
+                height: 360px;
+                background: white;
+                border-radius: 225px 225px 0 0;
+                transform: rotate(-45deg);
+                transform-origin: 0 100%;
+                
+            }
+
+            .heart:after {
+                left: 0;
+                transform: rotate(45deg);
+                transform-origin: 100% 100%;
+            }
+            @keyframes heart2 {
+                from {
+                background: white;
+
+                }
+
+                to {
+                background: #ff6c61;
+
+            
+           
+                }
+            }
             @keyframes heart1 {
                 from {
-                    font-size: 280px;
+                    transform: scale(1);
 
                 }
 
                 to {
                     color: #ff6c61;
-                    font-size: 400px;
+                    transform: scale(1.5);
                 }
             }
 
             @keyframes heart {
                 0% {
-                    font-size: 400px;
+                    transform: scale(1);
 
                 }
 
                 50% {
-                    font-size: 280px;
+                    transform: scale(0.75);
 
                 }
 
                 100% {
-                    font-size: 400px;
+                    transform: scale(1);
 
                 }
             }
@@ -95,8 +149,8 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="heart1"><i class="fa-sharp fa-solid fa-heart "></i></div>
-                <div class="heart"><i class="fa-sharp fa-solid fa-heart "></i></div>
+                <div class="heart1"></div>
+                <div class="heart"></div>
             </div>
         </div>
     </body>
