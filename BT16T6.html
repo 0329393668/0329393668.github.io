@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm Tra Techmaster</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+    </style>
+</head>
+<body>
+    <script>
+        <!-- lab1 -->
+        function min_max(a, b){
+            if (a>b){
+                return a;
+            }else {
+                return b;
+            }
+        }
+        let soa = Math.random()*1000;
+        let sob = Math.random()*1000;
+        console.log(soa.toFixed(),sob.toFixed());
+        console.log(min_max(parseFloat(soa.toFixed()), parseFloat(sob.toFixed())));
+
+        <!-- lab2 -->
+        function chanle(a){
+            if (a%2===0){
+                return 'chan';
+            }else{
+                return 'le';
+            }
+        }
+        let kiemtra = Math.random()*100;
+        console.log(kiemtra.toFixed());
+        console.log(chanle(kiemtra.toFixed()));
+
+        <!-- lab3 -->
+        function chia(a){
+            let result = Boolean.result
+            if (a%3===0 && a%5===0){
+                return true;
+            }else {
+                return false;
+            }
+        }
+        console.log(chia(60));
+
+        <!-- lab4 -->   
+        function tongab(a, b, c){
+            if (c=== a + b){
+                return true;
+            }else {
+                return false;
+            }
+        }
+        console.log(tongab(1, 2, 3));
+
+        <!-- lab5 -->
+        function timso(mark){
+            if(mark>=85){
+                return 'A';
+            }else{
+                if(mark>=70){
+                    return 'B';
+                }else{
+                    if(mark>=40){
+                        return 'C';
+                    }else{
+                        return 'D';
+                    }
+                }
+            }
+        }
+        console.log(timso(parseFloat((Math.random()*100).toFixed())));
+
+    </script>
+    
+    
+</body>
+</html>
