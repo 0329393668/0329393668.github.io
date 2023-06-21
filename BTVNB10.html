@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buổi 10 bt JS</title>
 </head>
+
 <body>
     <script>
         /*  Bài 1  */
 
         function bai1(a) {
-            if (a%3===0 && a%5===0) {
+            if (a % 3 === 0 && a % 5 === 0) {
                 console.log("FizzBuzz");
-            }else if(a%3===0) {
+            } else if (a % 3 === 0) {
                 console.log("Fizz");
-            }else if(a%5===0) {
+            } else if (a % 5 === 0) {
                 console.log("Buzz");
             }
         }
@@ -22,52 +24,56 @@
 
         /*  Bài 2  */
 
-        function bai2(a,b) {
-            let x = -b/a;
-            if (a===0) {
+        function bai2(a, b) {
+            let x = -b / a;
+            if (a === 0) {
                 console.log("Không xác định!");
-            }else if(b===0) {
+            } else if (b === 0) {
                 console.log(`Phương trình có một nghiệm là: X = 0`);
             } else {
                 console.log(`Phương trình có một nghiệm là: X = ${x}`);
             }
         }
-        bai2(2,-4);
+        bai2(2, -4);
 
         /*  Bài 3  */
 
-        function bai3(a,b,c) {
+        function bai3(a, b, c) {
             let delta = b * b - 4 * a * c;
-            if (a===0) {
+            if (a === 0) {
                 console.log("Không xác định!");
-            }else if(delta < 0) {
+            } else if (delta < 0) {
                 console.log("Phương trình vô nghiệm");
-            }else if(delta == 0) {
+            } else if (delta == 0) {
                 let x = -b / (2 * a);
-            }else if(delta > 0) {
-                let x1 = (-b + Math.sqrt(delta) ) / (2 * a);
-                let x2 = (-b - Math.sqrt(delta) ) / (2 * a);
+                console.log(`Phương trình có nghiệm kép x = ${x}`);
+            } else if (delta > 0) {
+                let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                let x2 = (-b - Math.sqrt(delta)) / (2 * a);
                 console.log(`Phương trình có hai nghiệm X1 = ${x1} và X2 = ${x2} `);
             }
         }
-        bai3(1,-3,2);
+        bai3(1, -3, 2);
 
         /*  Bài 4  */
 
-        function bai4(cannang,chieucao) {
-            let bmi = cannang/(chieucao**2);
+        function bai4(cannang, chieucao) {
+            let bmi = cannang / (chieucao ** 2);
             return bmi;
         }
-        console.log(`Kết quả BMI của bạn là: ${(bai4(80,1.8)).toFixed(2)}`);
+        console.log(`Kết quả BMI của bạn là: ${(bai4(80, 1.8)).toFixed(2)}`);
 
         /*  Bài 5  */
 
         function bai5(c) {
-            let f = 1.8 * c +32;
+            let f = 1.8 * c + 32;
             return `${c}℃ = ${f}℉`;
         }
         console.log(bai5(28));
 
+
+
     </script>
 </body>
+
 </html>
