@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTVN B11 Js </title>
+</head>
+
+<body>
+    <script>
+        /* Bài 1 */
+
+        /* FOR */
+
+        function repeatString(string, numRepeat, join_character) {
+            let ans = "";
+            for (let i = 1; i <= numRepeat; i++) {
+                if (i > 1) { ans = ans + join_character }
+                ans += string;
+            }
+            return ans;
+        }
+        console.log(repeatString("I❤Y", 3, " - "));
+
+        /* while */
+
+        function repeatString1(string, numRepeat, join_character) {
+            let ans = "";
+            let i = 1;
+            while (i <= numRepeat) {
+                if (i > 1) { ans = ans + join_character }
+                ans += string;
+                i = i + 1;
+            }
+            return ans;
+        }
+        console.log(repeatString1("I❤Y", 3, " + "));
+
+        /* Bài 2 */
+
+        /* FOR */
+
+        function calculateSum_For(startNum, endNum, divideNum) {
+            let sum = 0;
+            for (let i = startNum; i <= endNum; i++) {
+                if (i % divideNum === 0) {
+                    sum += i;
+                }
+            }
+            return sum;
+        }
+        console.log(calculateSum_For(0, 100, 5));
+
+        /* while */
+
+        function calculateSum_While(startNum, endNum, divideNum) {
+            let sum = 0;
+            let i = startNum;
+            while (i <= endNum) {
+                if (i % divideNum === 0) {
+                    sum += i;
+                }
+                i++
+            }
+            return sum;
+        }
+        console.log(calculateSum_While(0, 100, 5));
+
+        /* Bài 3 */
+
+        function calculateSphericalVolume(r) {
+            let pi = 3.14;
+            let volume = 4 * pi * r ** 3 / 3;
+            return volume;
+        }
+        console.log(calculateSphericalVolume(2).toFixed(2));
+
+        /* Bài 4 */
+
+        /* FOR */
+
+        function calculateSum_For1(Num1, Num2) {
+            let sum = 0;
+            for (let i = Num1; i <= Num2; i++) {
+                sum += i;
+            }
+            return sum;
+        }
+        console.log(calculateSum_For1(11, 17));
+
+        /* while */
+
+        function calculateSum_While1(Num1, Num2) {
+            let sum = 0;
+            let i = Num1;
+            while (i <= Num2) {
+                sum += i;
+                i++;
+            }
+            return sum;
+        }
+        console.log(calculateSum_While1(11, 17));
+
+        /* Bài 5 */
+
+        function isPrime(num) {
+            if (num < 2) {
+                return false;
+            }
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        console.log(isPrime(11));
+
+
+        /* Bài 6 */
+
+        /* FOR */
+
+        function calculateSumPrimeNumber_For(startNum, endNum) {
+            let sum = 0;
+            for (let i = startNum; i <= endNum; i++) {
+                if (isPrime(i) === true) {
+                    sum += i;
+                }
+            }
+            return sum;
+        }
+        console.log(calculateSumPrimeNumber_For(2, 11))
+
+        /* while */
+
+        function calculateSumPrimeNumber_While(startNum, endNum) {
+            let sum = 0;
+            let i = startNum;
+            while (i <= endNum) {
+                if (isPrime(i) === true) {
+                    sum += i;
+                }
+                i++;
+            }
+            return sum
+        }
+        console.log(calculateSumPrimeNumber_While(2, 11))
+
+        /* Bài 7 */
+
+        /* FOR */
+
+        function sumDivide_For(num) {
+            let sum = 0;
+            for(let i =1; i<=num;i++){
+                if(num%i===0){
+                    sum+=i;
+                }
+            }
+            return sum;
+        }
+        console.log(sumDivide_For(8))
+
+        /* while */
+
+        function sumDivide_While(num) {
+            let sum = 0;
+            let i = 1;
+            while(i<=num){
+                if(num%i===0){
+                    sum+=i;
+                }
+                i++;
+            }
+            return sum;
+        }
+        console.log(sumDivide_While(8))
+
+    </script>
+</body>
+
+</html>
