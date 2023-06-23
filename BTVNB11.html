@@ -82,9 +82,13 @@
 
         function calculateSum_For1(Num1, Num2) {
             let sum = 0;
-            for (let i = Num1; i <= Num2; i++) {
-                sum += i;
-            }
+            if (Num2>=Num1){
+                for (let i = Num1; i <= Num2; i++) {
+                    sum += i;}
+            }else {
+                for (let i = Num2; i <= Num1; i++) {
+                    sum += i;}
+            }       
             return sum;
         }
         console.log(calculateSum_For1(11, 17));
