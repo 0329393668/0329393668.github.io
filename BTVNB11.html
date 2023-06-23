@@ -82,13 +82,15 @@
 
         function calculateSum_For1(Num1, Num2) {
             let sum = 0;
-            if (Num2>=Num1){
+            if (Num2 >= Num1) {
                 for (let i = Num1; i <= Num2; i++) {
-                    sum += i;}
-            }else {
+                    sum += i;
+                }
+            } else {
                 for (let i = Num2; i <= Num1; i++) {
-                    sum += i;}
-            }       
+                    sum += i;
+                }
+            }
             return sum;
         }
         console.log(calculateSum_For1(11, 17));
@@ -97,10 +99,18 @@
 
         function calculateSum_While1(Num1, Num2) {
             let sum = 0;
-            let i = Num1;
-            while (i <= Num2) {
-                sum += i;
-                i++;
+            if (Num2 >= Num1) {
+                let i = Num1;
+                while (i <= Num2) {
+                    sum += i;
+                    i++;
+                }
+            } else {
+                let i = Num2;
+                while (i <= Num1) {
+                    sum += i;
+                    i++;
+                }
             }
             return sum;
         }
@@ -158,9 +168,9 @@
 
         function sumDivide_For(num) {
             let sum = 0;
-            for(let i =1; i<=num;i++){
-                if(num%i===0){
-                    sum+=i;
+            for (let i = 1; i <= num; i++) {
+                if (num % i === 0) {
+                    sum += i;
                 }
             }
             return sum;
@@ -172,9 +182,9 @@
         function sumDivide_While(num) {
             let sum = 0;
             let i = 1;
-            while(i<=num){
-                if(num%i===0){
-                    sum+=i;
+            while (i <= num) {
+                if (num % i === 0) {
+                    sum += i;
                 }
                 i++;
             }
