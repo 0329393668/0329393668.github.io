@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTVN 24/6</title>
+</head>
+
+<body>
+    <script>
+        /* Bài 1 */
+
+        /* Cách 1 */
+
+        function checkStringExist1(string, sub_string) {
+            return string.includes(sub_string);
+        }
+        console.log(checkStringExist1('i love you', 'you'));
+
+        /* Cách 2 */
+
+
+        function checkStringExist2(string, sub_string) {
+            if (string.indexOf(sub_string) !== -1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        console.log(checkStringExist2('i love you', 'hate'));
+
+        /* Cách 3 */
+
+        function checkStringExist3(string, sub_string) {
+            if (string.length >= sub_string.length) {
+                for (let i = 0; i <= string.length - sub_string.length; i++) {
+                    if (string.slice(i, i + sub_string.length) === sub_string) {
+                        return true;
+                    }
+                }
+                return false;
+            } else {
+                return false;
+            }
+
+        }
+        console.log(checkStringExist3('i love you', 'hate'));
+
+        /* Bài 2 */
+
+        function shortenString(string, num_character, appendStr) {
+            if (string.length <= num_character) {
+                return string;
+            } else {
+                return `${string.slice(0, num_character)}...`
+            }
+        }
+        console.log(shortenString('Xin chào các bạn', 8, '…'))
+
+        /* Bài 3 */
+
+        function isSymmetricString(string) {
+            let lowerCaseString = string.toLowerCase();
+            let sub = "";
+            let sub1 = "";
+            for (let i = 1; i <= string.length; i++) {
+                if (lowerCaseString.charAt(lowerCaseString.length - i) === " ") {
+                    continue;
+                } else {
+                    sub += lowerCaseString.charAt(lowerCaseString.length - i);
+                    sub1 += lowerCaseString.charAt(i - 1);
+                }
+                if (sub === sub1) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+        console.log(isSymmetricString("Race car"));
+
+        /* Bài 4 */
+        const convertSmallestNumberFromNumber = (number) => {
+
+            /** Chuyển số về string để có thể thực hiện hàm split */
+            const string = number.toString();
+
+            /** Chuyển string thành một mảng mới có các phần tử là số */
+            const stringArr = string.split('').map(Number);
+
+            /** Hàm sắp xếp mảng stringArr theo giá trị tăng dần */
+            const sortArr = stringArr.sort((a, b) => a - b);
+
+            /** Hàm lọc số 0 ra khỏi mảng */
+            const filter = sortArr.filter((item) => item != 0);
+
+            if (filter.length == 0) {
+                return 0;
+            };
+            /** Tính xem có bao nhiêu số 0 */
+            const numberZero = sortArr.length - filter.length;
+
+            /** Lấy số nhỏ nhất trong mảng.
+            * Hàm shift lấy ra phần tử đầu tiên của chuỗi và làm thay đổi giá trị chuỗi ban đầu
+            */
+            const smallestNumber = filter.shift();
+
+            /** Chuỗi trả ra */
+            let returnString = "";
+            returnString += smallestNumber;
+            /** Thêm số 0 vào chuỗi */
+            for (let i = 0; i < numberZero; i++) {
+                returnString += "0";
+            };
+
+            /** Thêm các số còn lại vào chuỗi */
+            for (let i = 0; i < filter.length; i++) {
+                returnString += filter[i];
+            };
+
+            /** Chuyển string thành số */
+            return parseInt(returnString);
+        };
+        console.log("Chuyển string về số nhỏ nhất", convertSmallestNumberFromNumber(200359));
+
+        /* Bài 5 */
+
+        function lowerString(string, appendStr) {
+            let sub = string.toLowerCase();
+            let sub1 = "";
+            for (i = 0; i < sub.length; i++) {
+                if (sub.charAt(i) === " ") {
+                    sub1 += appendStr;
+                } else {
+                    sub1 += sub.charAt(i);
+                }
+            }
+            return sub1
+        }
+        console.log(lowerString('HELLO world', '_'));
+        console.log(lowerString('Xin Chào Các BẠN', '_'));
+
+
+    </script>
+</body>
+
+</html>
