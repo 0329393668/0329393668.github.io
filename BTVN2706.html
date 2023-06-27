@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTVN 2706</title>
+</head>
+
+<body>
+    <script>
+        /* Bài 1 */
+
+        function findMax(arr) {
+            let maxNum = arr[0];
+            for (let i = 1; i < arr.length; i++) {
+                if (arr[i] > maxNum) {
+                    maxNum = arr[i];
+                }
+            }
+            return maxNum;
+        }
+        console.log(findMax([4, 2, 5, 6, 2, 7]));
+
+        /* Bài 2 */
+
+        function findMin(arr) {
+            let minNum = arr[0];
+            for (let i = 1; i < arr.length; i++) {
+                if (arr[i] < minNum) {
+                    minNum = arr[i];
+                }
+            }
+            return minNum;
+        }
+        console.log(findMin([4, 2, 5, 6, 2, 7]));
+
+        /* Bài 3 */
+
+        function findRemainders(arr) {
+            let result = [];
+            for (let i = 0; i < arr.length; i++) {
+                result.push(arr[i] % 2);
+            }
+            return result;
+        }
+        console.log(findRemainders([4, 2, 5, 6, 2, 7]));
+
+        /* Bài 4 */
+
+        function copyString(str, sub) {
+            let result = '';
+            for (let i = 0; i < sub; i++) {
+                result += str;
+            }
+            return result;
+        }
+        console.log(copyString('a', 10));
+
+        /* Bài 5 */
+
+        function copyString1(str, sub, item) {
+            let result = '';
+            for (let i = 0; i < sub - 1; i++) {
+                result += str + item;
+            }
+            result += str;
+            return result;
+        }
+        console.log(copyString1('a', 10, '-'));
+
+
+    </script>
+</body>
+
+</html>
