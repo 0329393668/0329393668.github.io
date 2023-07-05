@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grades</title>
+</head>
+
+<body>
+    <script>
+
+        // Đề bài 
+
+        const grades = [
+            { name: 'John', grade: 8, sex: 'M' },
+            { name: 'Sarah', grade: 12, sex: 'F' },
+            { name: 'Bob', grade: 16, sex: 'M' },
+            { name: 'Johnny', grade: 2, sex: 'M' },
+            { name: 'Ethan', grade: 4, sex: 'M' },
+            { name: 'Paula', grade: 18, sex: 'F' },
+            { name: 'Donald', grade: 5, sex: 'M' },
+            { name: 'Jennifer', grade: 13, sex: 'F' },
+            { name: 'Courtney', grade: 15, sex: 'F' },
+            { name: 'Jane', grade: 9, sex: 'F' }
+        ];
+
+        // Bài 1
+
+        const avarageGrade = arr => {
+            return arr.reduce((x, y) => {
+                return x + y.grade / arr.length;
+            }, 0);
+        }
+        console.log(avarageGrade(grades));
+
+        // Bài 2, 3    
+
+        const sexGrade = (arr, x) => {
+            const xGrade = arr.filter(p => p.sex === x);
+            return xGrade.reduce((x, y) => {
+                return x + y.grade / xGrade.length;
+            }, 0);
+        }
+
+        // Bài 2
+        console.log(sexGrade(grades, 'M'));
+        // Bài 3
+        console.log(sexGrade(grades, 'F'));
+
+
+        // Bài 4, 5
+
+        const sexGrade1 = (arr, x) => {
+            const xGrade = arr.filter(p => p.sex === x);
+            const sortGrade = xGrade.sort((a, b) => b.grade - a.grade);
+            return sortGrade[sortGrade.length - 1].grade;
+        }
+
+        // Bài 4
+        console.log(sexGrade1(grades, 'M'));
+        // Bài 5
+        console.log(sexGrade1(grades, 'F'));
+
+
+        // Bài 6, 7
+
+        const sexGrade2 = (arr, x) => {
+            const xGrade = arr.filter(p => p.sex === x);
+            const sortGrade = xGrade.sort((a, b) => a.grade - b.grade);
+            return sortGrade[sortGrade.length - 1].grade;
+        }
+
+        // Bài 6
+        console.log(sexGrade2(grades, 'M'));
+        // Bài 7
+        console.log(sexGrade2(grades, 'F'));
+
+
+        // Bài 8
+
+        const maxGrade = arr => {
+            const sortGrade = arr.sort((a, b) => b.grade - a.grade);
+            return sortGrade[sortGrade.length - 1].grade;
+        }
+        console.log(maxGrade(grades));
+
+        // Bài 9
+
+        const minGrade = arr => {
+            const sortGrade = arr.sort((a, b) => a.grade - b.grade);
+            return sortGrade[sortGrade.length - 1].grade;
+        }
+        console.log(minGrade(grades));
+
+        // Bài 10
+
+        const fGrade = (arr, f) => {
+            return arr.filter(p => p.sex === f);
+        }
+        console.log(fGrade(grades, 'F'));
+
+        // Bài 11
+        const subGrade11 = [...grades];
+        const nameGrade = arr => {
+            const sortName = arr.sort((a, b) => a.name.localeCompare(b.name))
+            return sortName;
+        }
+        console.log(nameGrade(subGrade11));
+
+        // Bài 12
+        const subGrade12 = [...grades];
+        const arrangeGrade = arr => arr.sort((a, b) => a.grade - b.grade);
+        console.log(arrangeGrade(subGrade12));
+
+        // Bài 13
+
+        const sexNameGrade = (arr, sex, name) => {
+            return arr.filter(p => p.sex === sex && p.name.startsWith(name));
+        }
+        console.log(sexNameGrade(grades, 'F', 'J'));
+
+        // Bài 14
+
+        const subGrade14 = [...grades];
+        const arrangeGrade5 = arr => {
+            const sortArr = arr.sort((a, b) => a.grade - b.grade);
+            return sortArr.slice(0, 5);
+        };
+        console.log(arrangeGrade5(subGrade14));
+
+    </script>
+</body>
+
+</html>

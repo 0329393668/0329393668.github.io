@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+
+<body>
+    <script>
+
+        // Đề bài 
+
+        let products = [
+            {
+                name: "Iphone 13 Pro Max", // Tên sản phẩm
+                price: 3000000, // Giá mỗi sản phẩm
+                brand: "Apple", // Thương hiệu
+                count: 2, // Số lượng sản phẩm trong giỏ hàng
+            },
+            {
+                name: "Samsung Galaxy Z Fold3",
+                price: 41000000,
+                brand: "Samsung",
+                count: 1,
+            },
+            {
+                name: "IPhone 11",
+                price: 15500000,
+                brand: "Apple",
+                count: 1,
+            },
+            {
+                name: "OPPO Find X3 Pro",
+                price: 19500000,
+                brand: "OPPO",
+                count: 3,
+            },
+        ];
+
+        // Bài 1
+
+        const showInfo = arr => {
+            return arr.map(p => `${p.name} - ${p.price} - ${p.brand} - ${p.count}`
+            )
+        };
+        console.log(showInfo(products));
+
+        // Bài 2   
+
+        const totalPrice = arr => {
+            return arr.reduce((acc, product) => {
+                return acc + product.price * product.count;
+            }, 0);
+        }
+        console.log(totalPrice(products));
+
+
+        // Bài 3
+
+        const findByBrand = (arr, brand) => {
+            return arr.filter(p => p.brand === brand);
+        }
+        console.log(findByBrand(products, 'Apple'));
+
+        // Bài 4
+
+        const expensiveProducts = (arr, price) => {
+            return arr.filter(p => p.price > price);
+        }
+        console.log(expensiveProducts(products, 20000000));
+
+        // Bài 5
+
+        const findByName = (arr, keyword) => {
+            return arr.filter(p => p.name.toLowerCase().includes(keyword.toLowerCase()));
+        }
+        console.log(findByName(products, 'pro'));
+
+        // Bài 6
+
+        const newProduct = {
+            name: "Sony Xperia 1 III",
+            price: 25000000,
+            brand: "Sony",
+            count: 2,
+        };
+        products.push(newProduct);
+        console.log(products);
+
+        // Bài 7
+
+        const brandProducts = (arr, brand) => {
+            return arr.filter(p => p.brand !== brand);
+        }
+        console.log(brandProducts(products, 'Samsung'));
+
+        // Bài 8
+
+        const sortedByPrice = arr => arr.sort((a, b) => a.price - b.price);
+        console.log(sortedByPrice(products));
+
+        // Bài 9
+
+        const sortedByCount = arr => arr.sort((a, b) => b.count - a.count);
+        console.log(sortedByCount(products));
+
+        // Bài 10
+
+        const ramdomProduct = (arr, number) => {
+            const ramdomIndexs = [];
+            while (ramdomIndexs.length < number) {
+                const ramdomIndex = Math.floor(Math.random() * products.length);
+                if (!ramdomIndexs.includes(ramdomIndex)) {
+                    ramdomIndexs.push(ramdomIndex);
+                }
+            };
+            return ramdomIndexs.map(p => arr[p]);
+        }
+        console.log(ramdomProduct(products, 2));
+
+    </script>
+</body>
+
+</html>
