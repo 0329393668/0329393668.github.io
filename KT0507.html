@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KIểm tra</title>
+</head>
+
+<body>
+    <script>
+
+        /* Bài 1*/
+        // Bước 1 : Sắp xếp mảng theo thứ tự giảm dần
+        // Bước 2 : Lấy ra giá trị đầu tiên trong mảng ở đây là giá trị lớn nhất
+        // Bước 3 : Lọc số lớn nhất vừa tìm được ra khỏi mảng sau khi săp xếp 
+        // Bước 4 : Lấy ra giá trị đầu tiên của mảng vừa lọc ở bước 3 là số lớn thứ 2 cần tìm
+
+
+        const max2Numbers = arr => {
+            const sortArr = arr.sort((a, b) => b - a);
+            const soLonNhat = sortArr[0];
+            const max2 = sortArr.filter(item => item !== soLonNhat);
+            return max2[0];
+        }
+        console.log(max2Numbers([2, 1, 3, 4]));
+
+        /* Bài 2*/
+        // Bước 1 : Sắp xếp mảng theo thứ tự giảm dần
+        // Bước 2 : Lấy ra chuỗi đầu tiên trong mảng ở đây là chuỗi lớn nhất
+        // Bước 3 : Lọc qua mảng ở bước 1 để lấy ra các chuỗi có cùng Length với chuỗi lớn nhất ta thu đc tập hợp chuỗi lớn nhất
+
+        const getStringHasMaxLength = arr => {
+            const sortArr = arr.sort((a, b) => b.length - a.length)
+            const manglonnhat = sortArr[0];
+            const max = sortArr.filter(item => item.length === manglonnhat.length);
+            return max;
+        }
+        console.log(getStringHasMaxLength(['aba', 'aa', 'ad', 'c', 'vcd']));
+
+        /* Bài 3*/
+        // Bước 1 : Sử dụng hàm Math.floor(Math.random() * arr.length) tạo ra một số nguyên ngẫu nhiên từ 0 đến arr.length - 1
+        // Bước 2 : Sử dụng toán tử [] để lấy một phần tử ngẫu nhiên trong mảng
+
+        const getRandomElement = arr => arr[Math.floor(Math.random() * arr.length)];
+        console.log(getRandomElement([3, 7, 9, 11]));
+
+        /* Bài 4*/
+        // Bước 1 : Sử dụng phương thức filter() kết hợp với phương thức includes()
+        // Bước 2 : sử dụng phương thức filter() để lấy ra các phần tử trong mảng đầu tiên (arr) mà có trong mảng thứ hai (acc). 
+        //          Để kiểm tra xem một phần tử có tồn tại trong mảng hay không, ta sử dụng phương thức includes().
+
+        const similarity = (arr, acc) => {
+            return arr.filter(item => acc.includes(item));
+        }
+        console.log(similarity([1, 2, 3], [1, 2, 4]));
+        console.log(similarity([1, 2, 3], [3, 4, 5]));
+
+        /* Bài 5*/
+        // Bước 1: Sử dụng .split(':').map(Number) để lấy số giờ, phút, giây
+        // Bước 2: Tính tổng số giây mà mảng ban đầu cung cấp 1 giờ bằng 3600s, 1 phút bằng 60 giây 
+        //         Từ đó lập được công thức tính giờ * 3600 + phút * 60 + giây + Số x giây cần thêm 
+        // Bước 3: Có được tổng số giây sau khi thay đổi ta tính ngược lại số Giờ Phút Và số giây 
+        //         Sử dụng Math.floor để làm tròn dưới vì số dư là số để chuyển đổi thành đơn vị phút với giây
+        //         cách tính số giờ ta lấy số giây tổng khi thêm x giây chia cho 3600 
+        //         cách tính số phút ta lấy số giây dư còn lại chia cho 60
+        //         cách tính số giây lấy số giây dư còn lại  
+        // Bước 4: In ra kết quả
+
+
+        function getTime(str, x) {
+            const timeParts = str.split(':').map(Number);
+            const seconds = timeParts[0] * 3600 + timeParts[1] * 60 + timeParts[2] + x;
+            const hours = Math.floor(seconds / 3600);
+            const minutes = Math.floor((seconds % 3600) / 60);
+            const remainingSeconds = seconds % 60;
+            return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+        }
+        console.log(getTime("09:20:56", 7))
+
+        /* Bài 6  */
+        // Sự dụng filter để lọc với điều kiện tuối > 25 và isStatusn = true
+        // Sử dụng sort để sắp xếp thứ tự từ bé đến với của số tuổi
+
+        users = [
+            {
+                name: "Bùi Công Sơn",
+                age: 30,
+                isStatus: true
+            },
+            {
+                name: "Nguyễn Thu Hằng",
+                age: 27,
+                isStatus: false
+            },
+            {
+                name: "Phạm Văn Dũng",
+                age: 20,
+                isStatus: false
+            }
+        ];
+        const ageUser = arr => arr.filter(p => p.age > 25 && p.isStatus === true)
+        console.log(ageUser(users));
+
+        const sortAge = arr => arr.sort((a, b) => a.age - b.age);
+        console.log(sortAge(users));
+
+        /* Bài 7*/
+        // sử dụng phương thức reduce() để đếm số lần xuất hiện của mỗi phần tử trong một mảng
+
+        function getCountElement(arr) {
+            return arr.reduce((count, element) => {
+                count[element] = (count[element] || 0) + 1;
+                return count;
+            }, {});
+        }
+        console.log(getCountElement(["one", "two", "three", "one", "one", "three"]));
+
+        
+
+
+
+    </script>
+</body>
+
+</html>
