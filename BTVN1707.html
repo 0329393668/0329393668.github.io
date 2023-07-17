@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+    @import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #d3cce3;
+      background: -webkit-linear-gradient(to bottom, #e9e4f0, #d3cce3);
+      background: linear-gradient(to bottom, #e9e4f0, #d3cce3);
+      font-family: "Roboto", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .testimonials-container {
+      color: rgba(255, 255, 255, 0.8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 70px 50px 50px;
+      transition: all 0.3s ease-in;
+      margin: 20px;
+      max-width: 100%;
+    }
+
+    .fa-quote-left {
+      color: rgba(0, 0, 0, 0.15);
+      font-size: 50px;
+    }
+
+    .text {
+      line-height: 30px;
+      margin: 40px 0 20px;
+      min-height: 150px;
+      max-width: 600px;
+      text-align: justify;
+      word-spacing: 5px;
+    }
+
+    .name {
+      align-self: flex-end;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .authors-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .author {
+      margin: 30px 30px 0;
+      cursor: pointer;
+    }
+
+    .author.selected img {
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+      transform: scale(1.2);
+    }
+
+    .author img {
+      transition: all 0.3s ease-in;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Thay đổi background tương ứng trong class "testimonials-container" -->
+  <div class="testimonials-container">
+    <i class="fas fa-quote-left"></i>
+
+    <!-- Nội dung quote hiển thị ở đây -->
+    <p class="text"></p>
+
+    <!-- Tên tác giả hiển thị ở đây -->
+    <strong class="name"></strong>
+
+    <div class="authors-container">
+      <div class="author selected"><img src="https://randomuser.me/api/portraits/men/41.jpg" alt=""></div>
+      <div class="author"><img src="https://randomuser.me/api/portraits/women/50.jpg" alt=""></div>
+      <div class="author"><img src="https://randomuser.me/api/portraits/women/22.jpg" alt=""></div>
+      <div class="author"><img src="https://randomuser.me/api/portraits/women/76.jpg" alt=""></div>
+      <div class="author"><img src="https://randomuser.me/api/portraits/men/17.jpg" alt=""></div>
+    </div>
+    <script>
+      const productList = [
+        {
+          image: 1,
+          quote: "Under the leadership of YG Entertainment, Big Bang continuously released a series of singles and EPs but achieved only modest success. The group only really broke through with the EP Always released in 2007, along with their number one single Lies .",
+          name: "G-Dragon",
+          color: "red"
+        },
+        {
+          image: 2,
+          quote: "Choi Seung-hyun was nickSTTd T.O.P by his older brother at YG, Se7en. (Korean: 탑). T.O.P joined Big Bang in 2006 as one of two rappers (the other being G-Dragon, the leader of Big Bang).",
+          name: "T.O.P",
+          color: "blue"
+        }, {
+          image: 3,
+          quote: "After appearing in Lexy album, Taeyang plans to release his first solo album. Although scheduled to be released in September 2008, the album was forced to fall behind schedule due to scheduling conflicts with the band.",
+          name: "Taeyang",
+          color: "pink"
+        }, {
+          image: 4,
+          quote: "The group first appearance was on August 19, 2006 during YG Family 10th anniversary show. On September 23, 2006, they had their first televised performance.",
+          name: "Daesung",
+          color: "orange"
+        }, {
+          image: 5,
+          quote: "Seungri also started his acting career with the first work as the musical Sonagi 2008 before appearing in 2 movies Nineteen.",
+          name: "Seungri",
+          color: "green"
+        }
+      ]
+
+      const testimonialsContainer = document.querySelector('.testimonials-container');
+      const authorsContainer = document.querySelector('.authors-container');
+      const textElem = document.querySelector('.text');
+      const nameElem = document.querySelector('.name');
+
+      authorsContainer.addEventListener('click', (event) => {
+        const authorElem = event.target.closest('.author');
+        if (authorElem) {
+          const selectedElems = document.querySelectorAll('.selected');
+          for (let elem of selectedElems) {
+            elem.classList.remove('selected');
+          }
+          authorElem.classList.add('selected');
+          const index = Array.from(authorsContainer.children).indexOf(authorElem);
+          if (productList[index]) {
+            textElem.innerText = productList[index].quote;
+            nameElem.innerText = productList[index].name;
+            testimonialsContainer.style.backgroundColor = productList[index].color;
+            testimonialsContainer.style.boxShadow = `0px 35px 15px -20px ${productList[index].color}`;
+          }
+        }
+      });
+
+    </script>
+  </div>
+</body>
+
+</html>
