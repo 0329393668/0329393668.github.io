@@ -17,8 +17,8 @@
     </div>
     <nav>
       <ul>
-        <li><a href="#">Trang chủ</a></li>
-        <li><a href="#">Sản phẩm</a></li>
+        <li><a href="#" onclick="home()">Trang chủ</a></li>
+        <li><a href="#" onclick="home()">Sản phẩm</a></li>
         <li><a href="#">Giới thiệu</a></li>
         <li><a href="#">Liên hệ</a></li>
       </ul>
@@ -27,7 +27,7 @@
       <a href="#">Giỏ hàng</a>
     </div>
     <div class="login">
-      <a href="#">Đăng nhập</a>
+      <a href="#" onclick="login()">Đăng xuất</a>
     </div>
   </header>
 
@@ -42,24 +42,118 @@
   <section class="products">
     <h2>Danh mục sản phẩm</h2>
     <ul class="filters">
-      <li><a href="#">Giá cả</a></li>
-      <li><a href="#">Thương hiệu</a></li>
-      <li><a href="#">Màu sắc</a></li>
-      <li><a href="#">Kích cỡ</a></li>
-    </ul>
-    <ul  id="product-list" class="items">
+      <li><a href="#">Giá cả</a>
+        <label for="">Giá tối thiểu: </label>
+        <input type="number" class="min-price">
+        <label for="">Giá tối đa: </label>
+        <input type="number" class="max-price">
+      </li>
+      <li><a href="#">Thương hiệu</a>
+        <select id="trademark" name="trademark">
+          <option value="all">Tất cả </option>
+          <option value="iphone">Iphone</option>
+          <option value="xiaomi">Xiaomi</option>
+        </select>
+      </li>
+      <li><a href="#">Màu sắc</a>
+        <select id="color" name="color">
+          <option value="all">Tất cả </option>
+          <option value="black">Đen</option>
+          <option value="blue">Xanh</option>
+          <option value="yellow">Vàng</option>
+        </select>
+      </li>
       <li>
-        <img src="https://img.websosanh.vn/v2/users/review/images/g0uimocg53p63.jpg?compress=85" alt="Sản phẩm 1">
+        <button onclick="handleSearch()">Tìm Kiếm</button>
+      </li>
+    </ul>
+    <ul id="product-list" class="items">
+      <li class="js-show">
+        <img src="https://img.websosanh.vn/v2/users/review/images/g0uimocg53p63.jpg?compress=85"
+          alt="Sản phẩm 1">
         <h3>Sản phẩm 1</h3>
         <p>Giá: 100.000 đồng</p>
         <a href="#" class="btn">Chi Tiết Sản Phẩm</a>
         <a href="#" class="btn">Mua ngay</a>
       </li>
-      
+
     </ul>
   </section>
 
+  <!-- Chi tiết sản phẩm -->
+  <div id="myModal" class="main__product-detail modal">
+    <div class="product-detail modal-content">
+      <div class="product-detail__logo">
+        Chi tiết thông số kỹ thuật sản phẩm 1
+        <span class="close">&times;</span>
+      </div>
+      <img src="https://img.websosanh.vn/v2/users/review/images/g0uimocg53p63.jpg?compress=85" alt="Sản phẩm 1">
+      <div class="product-detail__rating">
+        <div class="rating">
+          <div class="star">
+            Thông Tin hàng hóa
+          </div>
+          <div class="star__sub">
+            <p> - Thương hiệu:
+              Apple</p>
+            <p> - Thời điểm ra mắt:
+              09/2022</p>
+            <p> - Xuất xứ:
+              Trung Quốc</p>
+            <p> - Thời gian bảo hành (tháng):
+              12</p>
+            <p> - Hướng dẫn bảo quản:
+              Để nơi khô ráo, nhẹ tay, dễ vỡ.</p>
+            <p> -
+              Hướng dẫn sử dụng:
+              Xem trong sách hướng dẫn sử dụng</p>
+          </div>
+          <div class="star">
+            Thiết kế & Trọng lượng
+          </div>
+          <div class="star__sub">
+            <p> -
+              Trọng lượng sản phẩm 240 g</p>
+          </div>
+          <div class="star">
+            Bộ xử lý
+          </div>
+          <div class="star__sub">
+            <p> -
+              Phiên bản CPU Apple A16 Bionic</p>
+            <p> - Số nhân 6</p>
+          </div>
+          <div class="star">
+            Màn hình
+          </div>
+          <div class="star__sub">
+            <p> -
+              Kích thước màn hình 6.7 inch</p>
+            <p> - Loại cảm ứng Điện dung đa điểm</p>
+            <p> - Độ sáng tối đa 2000 nits</p>
+            <p> - Độ phân giải
+              2796 x 1290 Pixels</p>
+          </div>
+          <div class="star">
+            Lưu trữ
+          </div>
+          <div class="star__sub">
+            <p> -
+              Bộ nhớ trong 128 GB</p>
+            <p> - Thẻ nhớ ngoài Không</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <p>© 2007 - 2023 Công Ty Cổ Phần Bán Lẻ Kỹ Thuật Số</p>
+    </div>
+  </footer>
   <script src="./jvscript2.js"></script>
+  <script src="./jvscript3.js"></script>
 </body>
 
 </html>
