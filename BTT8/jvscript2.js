@@ -1,12 +1,12 @@
 const products = [
-  { id: 1, name: 'iPhone 14 Pro Max', price: 26580000, colorPc: 'black', category: 'iphone', img: 'https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/31/638107858631679725_iphone-14-pro-max-dd-1.jpg' },
-  { id: 2, name: 'Xiaomi Redmi Note 12', price: 4390000, colorPc: 'black', category: 'xiaomi', img: 'https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/3/24/638152739283440892_xiaomi-redmi-note-12-dd-bh.jpg' },
-  { id: 3, name: 'iPhone 14 Plus', price: 21490000, colorPc: 'yellow', category: 'iphone', img: 'https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/3/8/638138668784200644_iphone-14-plus-dd.jpg' },
-  { id: 4, name: 'Xiaomi Redmi 10', price: 3790000, colorPc: 'blue', category: 'xiaomi', img: 'https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/4/3/638161092136822060_xiaomi-redmi-10-2022-dd-docquyen.jpg' },
-  { id: 5, name: 'iPhone 13 Pro Max', price: 18690000, colorPc: 'black', category: 'iphone', img: 'https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/31/638107846050335072_iphone-13-dd-1.jpg' },
-  { id: 6, name: 'Xiaomi Redmi Note 12S', price: 6190000, colorPc: 'blue', category: 'xiaomi', img: 'https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/5/22/638203651486566280_xiaomi-redmi-note-12s-dd-bh.jpg' },
-  { id: 7, name: 'iPhone 12', price: 14790000, colorPc: 'blue', category: 'iphone', img: 'https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/31/638107840321195326_iphone-12-dd.jpg' },
-  { id: 8, name: 'iPhone 11', price: 10680000, colorPc: 'black', category: 'iphone', img: 'https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/4/17/638173197260604063_iphone-11-dd.jpg' }
+  { id: 1, name: 'iPhone 14 Pro Max', price: 26580000, colorPc: 'black', count: 1, category: 'iphone', img: 'https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/31/638107858631679725_iphone-14-pro-max-dd-1.jpg' },
+  { id: 2, name: 'Xiaomi Redmi Note 12', price: 4390000, colorPc: 'black', count: 1, category: 'xiaomi', img: 'https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/3/24/638152739283440892_xiaomi-redmi-note-12-dd-bh.jpg' },
+  { id: 3, name: 'iPhone 14 Plus', price: 21490000, colorPc: 'yellow', count: 1, category: 'iphone', img: 'https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/3/8/638138668784200644_iphone-14-plus-dd.jpg' },
+  { id: 4, name: 'Xiaomi Redmi 10', price: 3790000, colorPc: 'blue', count: 1, category: 'xiaomi', img: 'https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/4/3/638161092136822060_xiaomi-redmi-10-2022-dd-docquyen.jpg' },
+  { id: 5, name: 'iPhone 13 Pro Max', price: 18690000, colorPc: 'black', count: 1, category: 'iphone', img: 'https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/31/638107846050335072_iphone-13-dd-1.jpg' },
+  { id: 6, name: 'Xiaomi Redmi Note 12S', price: 6190000, colorPc: 'blue', count: 1, category: 'xiaomi', img: 'https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/5/22/638203651486566280_xiaomi-redmi-note-12s-dd-bh.jpg' },
+  { id: 7, name: 'iPhone 12', price: 14790000, colorPc: 'blue', count: 1, category: 'iphone', img: 'https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/31/638107840321195326_iphone-12-dd.jpg' },
+  { id: 8, name: 'iPhone 11', price: 10680000, colorPc: 'black', count: 1, category: 'iphone', img: 'https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/4/17/638173197260604063_iphone-11-dd.jpg' }
 ];
 function login() {
   window.location.replace('/BTT8/index.html');
@@ -18,6 +18,25 @@ function sign() {
 function home() {
   window.location.replace('/BTT8/index2.html');
 }
+function shop() {
+  window.location.replace('/BTT8/index3.html');
+}
+// số lượng 
+const current = localStorage.getItem('currents');
+const data2 = JSON.parse(current);
+function updateTotalItem(arr) {
+  let total = 0;
+  for (let i = 0; i < arr.length; i++) {
+    const p = arr[i];
+    total += p.count;
+  }
+  return total;
+}
+function renderUI(arr) {
+  let countEle = document.querySelector('.count');
+  countEle.innerText = `Giỏ hàng ( ${updateTotalItem(arr)} )`;
+}
+
 
 function renderProductList(products) {
   const productList = document.getElementById('product-list');
@@ -29,12 +48,10 @@ function renderProductList(products) {
           <img src="${product.img}" alt="${product.name}">
           <h3>${product.name}</h3>
           <p>Giá: ${product.price.toLocaleString()} đồng</p>
-          <a href="#" class="btn">Mua ngay</a>
+          <a href="#" class="btn" onclick="shop()">Mua ngay</a>
         </li>
       `;
   }
-
-
 
   productList.innerHTML = html;
   // Chi Tiết Sản Phẩm
@@ -122,13 +139,53 @@ function renderProductList(products) {
     });
   }
 
+
+  // show sản phảm 
   function showBuyBtn(product) {
     modal.style.display = 'block';
     localStorage.setItem("current", JSON.stringify(product));
     const dataProduct = localStorage.getItem('current');
     const data1 = JSON.parse(dataProduct);
-    renderProduct(data1)
+    const productListCurrent = JSON.parse(localStorage.getItem('currents')) || [];
+    if (productListCurrent.length == 0) {
+      productListCurrent.push(product)
+    } else {
+      let isPresent = false;
+      let index = null;
+      for (let i = 0; i < productListCurrent.length; i++) {
+        if (productListCurrent[i].id == product.id) {
+          isPresent = true;
+          index = i;
+        };
+      };
+      if (isPresent == true) {
+        productListCurrent[index].count += 1;
+      } else {
+        productListCurrent.push(product)
+      }
+    }
+    localStorage.setItem("currents", JSON.stringify(productListCurrent));
+    renderProduct(data1);
+    renderUI(productListCurrent);
   }
+
+
+  // số lượng 
+  // const current = localStorage.getItem('currents');
+  // const data2 = JSON.parse(current);
+  function updateTotalItem(arr) {
+    let total = 0;
+    for (let i = 0; i < arr.length; i++) {
+      const p = arr[i];
+      total += p.count;
+    }
+    return total;
+  }
+  function renderUI(arr) {
+    let countEle = document.querySelector('.count');
+    countEle.innerText = `Giỏ hàng ( ${updateTotalItem(arr)} )`;
+  }
+  // renderUI(data2)
 
 
 
@@ -188,8 +245,6 @@ function handleSearch() {
 
   renderProductList(productSearch);
 
-  // Chi Tiết Sản Phẩm
-
   // Lấy tham chiếu đến các phần tử trong HTML
   const modal = document.getElementById('myModal');
   const closeBtn = document.getElementsByClassName('close')[0];
@@ -213,4 +268,6 @@ function handleSearch() {
   }
 }
 
-
+if (data2.length !== 0) {
+  renderUI(data2)
+}

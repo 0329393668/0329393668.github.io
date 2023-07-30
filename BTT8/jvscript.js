@@ -1,5 +1,6 @@
 const form = document.querySelector('form');
 
+
 function createAccount(username, password) {
     const newAccount = {
         username: username,
@@ -49,4 +50,5 @@ form.addEventListener('submit', function (event) {
         alert('Tên đăng nhập hoặc mật khẩu không hợp lệ. Vui lòng thử lại!');
     }
 });
+
 
