@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            line-height: 74px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        .subtotal,
+        .vat,
+        .discount,
+        .total {
+            font-weight: bold;
+        }
+
+        .discount.hide {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="container_bill">
+            <div class="invoice">
+                <h1>Hóa đơn Bàn 1</h1>
+                <table>
+                    <tr>
+                        <th>Sản phẩm</th>
+                        <th>Số lượng</th>
+                        <th>Giá</th>
+                        <th>Tổng cộng</th>
+                    </tr>
+                    <tr>
+                        <td>Nước khoáng 500ml</td>
+                        <td>5 </td>
+                        <td>10.000đ</td>
+                        <td>50.000đ</td>
+                    </tr>
+                    <tr>
+                        <td>Nước tăng lực 330ml</td>
+                        <td>3 </td>
+                        <td>15.000đ</td>
+                        <td>45.000đ</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="subtotal">Tạm tính</td>
+                        <td class="subtotal">95.000đ</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="vat">Thuế</td>
+                        <td class="vat">9.500đ</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="discount">Giảm giá</td>
+                        <td class="discount">9.500đ</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="total">Tổng cộng</td>
+                        <td class="total">95.000đ</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src=" ./js/javascipt.js">
+    </script>
+</body>
+
+</html>

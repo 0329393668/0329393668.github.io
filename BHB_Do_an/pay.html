@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <main>
+        <div class="navbar">
+            <!-- Thêm nội dung thanh nav tại đây -->
+
+            <div class="navbar_1 m-20 color-w">
+                <i style="margin-right: 16px;" class="fa-solid fa-bars"></i>
+                Cafe - Nhà Hàng
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+
+            <div class="navbar_2 m-20 color-w">
+                <i class="fa-regular fa-bell"></i>
+                <div class="logout">Đăng xuất</div>
+            </div>
+
+        </div>
+        <div class="sub_nav">
+            <p>Thanh Toán </p>
+        </div>
+        <div class="container_pay">
+            <div class="sub_container_pay">
+                <div class="pay_name">
+                    Bàn 1
+                </div>
+                <div class="pay_summary">
+                    <ul>
+                        <li class="subtotal">Tạm Tính <span>150.000đ</span></li>
+                        <li class="vat">Thuế<span>15.000đ</span></li>
+                        <li class="discount hide">Giảm giá<span>16.500đ</span></li>
+                        <li><label for="discount-code">Mã giảm giá:</label>
+                            <input type="text" id="discount-code" name="discount-code" placeholder="Nhập mã giảm giá">
+                            <button type="button" onclick="applyDiscount()">Áp dụng</button></li>
+                        <li class="total">Tổng cộng <span>148.500đ</span></li>
+                    </ul>
+                    
+                </div>
+                <div class="pay_footer">
+                    Thanh Toán
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./js/javascipt.js"></script>
+</body>
+
+</html>
