@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/test.css">
+
+</head>
+
+<body>
+    <div id="mini-cart" class="mini-cart">
+        <div class="mini-cart__content">
+            <div class="cart-info">
+                Giỏ hàng của bạn <a name="checkout" href="https://order.phuclong.com.vn/" class="btn btn-default"> Xem
+                    chi tiết </a>
+            </div>
+
+            <div class="scroll-wrapper scrollbar-macosx" style="position: relative;">
+                <div class="scrollbar-macosx scroll-content"
+                    style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 25px;">
+                    <ul class="cart-list">
+                        <!-- ngRepeat: product in products -->
+
+                    </ul>
+                </div>
+                <div class="scroll-element scroll-x">
+                    <div class="scroll-element_outer">
+                        <div class="scroll-element_size"></div>
+                        <div class="scroll-element_track"></div>
+                        <div class="scroll-bar" style="width: 0px;"></div>
+                    </div>
+                </div>
+                <div class="scroll-element scroll-y">
+                    <div class="scroll-element_outer">
+                        <div class="scroll-element_size"></div>
+                        <div class="scroll-element_track"></div>
+                        <div class="scroll-bar" style="height: 0px;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart-total text-center">
+                <label>Tổng tiền</label> <span class="price ng-binding" ng-bind="total().money">0 đ</span>
+            </div>
+            <div class="checkout-twostyle__ButtonWrapper-sc-14n4o2h-2 jKjmRt" style="padding-top: 0px;"><button
+                type="submit" class="button__StyledButton-sc-6gren8-0 hCwjNQ btnCheckout" disabled="">Thanh toán</button></div>
+        </div>
+    </div>
+</body>
+
+</html>
