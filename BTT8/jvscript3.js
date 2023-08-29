@@ -1,15 +1,15 @@
 function login() {
-    window.location.replace('/BTT8/index.html');
+    window.location.replace('/index.html');
 }
 
 function sign() {
-    window.location.replace('/BTT8/index1.html');
+    window.location.replace('/index1.html');
 }
 function home() {
-    window.location.replace('/BTT8/index2.html');
+    window.location.replace('/index2.html');
 }
 function shop() {
-    window.location.replace('/BTT8/index3.html');
+    window.location.replace('/index3.html');
 }
 
 

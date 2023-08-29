@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>Trang chủ</title>
+    <link rel="icon" href="https://phuclong.com.vn/images/logo.png" sizes="32x32">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/test.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -21,77 +22,65 @@
             <div class="h_logo">
                 <img src="https://phuclong.com.vn/images/logo_2.png" alt="Logo">
             </div>
-            <div class="h_right">
-                <a href="#"><strong>Đăng nhập</strong></a>
-                <button class="show_hang">Giỏ hàng <i class="fa-solid fa-cart-shopping"></i>
-                </button>
-                <div id="mini-cart" class="mini-cart">
-                    <div class="mini-cart__content">
-                        <div class="cart-info">
-                            Giỏ hàng của bạn <a name="checkout" href="#"
-                                class="btn btn-default"> Xem
-                                chi tiết </a>
-                        </div>
+            <div class="h_right_sub">
+                <a href="#" onclick="login()"><strong>Đăng nhập</strong></a>
+                <div class="h_right">
+                    <button class="show_hang">Giỏ hàng <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                    <!-- Show giỏ hàng -->
+                    <div id="mini-cart" class="mini-cart">
+                        <div class="mini-cart__content">
+                            <div class="cart-info">
+                                Giỏ hàng của bạn <a name="checkout" href="#" class="btn btn-default" onclick="cart()"> Xem
+                                    chi tiết </a>
+                            </div>
 
-                        <div class="scroll-wrapper scrollbar-macosx" style="position: relative;">
-                            <div class="scrollbar-macosx scroll-content"
-                                style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 25px;">
-                                <ul style="padding-left: inherit;" class="cart-list">
-                                    <!-- ngRepeat: product in products -->
-                                    <li class="cart-list__item ng-scope first" ng-repeat="product in products"
-                                        ng-class="{ first: $index === 0 }">
-                                        <div class="item-thumb">
-                                            <a href="#" title="" class="">
-                                                <img ng-src="https://phuclong.com.vn/uploads/dish/c4692e6548c0af-65000306hngtrcarameldaxay.png"
-                                                    alt=""
-                                                    src="https://phuclong.com.vn/uploads/dish/c4692e6548c0af-65000306hngtrcarameldaxay.png">
-                                            </a>
-                                        </div>
-                                        <div class="item-title">
-                                            <a style="color: black;" href="#" ng-bind="getTranslate(product.title)"
-                                                class="ng-binding">Hồng
-                                                trà caramel dừa đá xay</a>
-                                            <div class="item-extra note ng-binding">Ice regular size </div>
-                                            <!-- ngRepeat: option in product.options.extra -->
-                                            <div class="item-qty">
-                                                <span class="quantity ng-binding"
-                                                    data-id="613d8ff12a6dae739d7d9858b4ee04b9"
-                                                    ng-bind="product.qty">1</span>x
-                                                <span class="price ng-binding" ng-bind="product.price.toMoney()">70.000
-                                                    đ</span>
+                            <div class="scroll-wrapper scrollbar-macosx" style="position: relative;">
+                                <div class="scrollbar-macosx scroll-content"
+                                    style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 150px; overflow: auto;">
+                                    <ul style="padding-left: inherit;" class="cart-list">
+                                        <!-- ngRepeat: product in products -->
+                                        <li class="cart-list__item ng-scope first" ng-repeat="product in products"
+                                            ng-class="{ first: $index === 0 }">
+                                            <div class="item-thumb">
+                                                <a href="#" title="" class="">
+                                                    <img ng-src="https://phuclong.com.vn/uploads/dish/c4692e6548c0af-65000306hngtrcarameldaxay.png"
+                                                        alt=""
+                                                        src="https://phuclong.com.vn/uploads/dish/c4692e6548c0af-65000306hngtrcarameldaxay.png">
+                                                </a>
                                             </div>
-                                        </div>
-                                        <div class="item-action" ng-hide="getDone()" ng-click="delete($index, product)">
-                                            <a class="btn-remove" href="javascript:void(0)">
-                                                <i style="color: black;" class="fa fa-times"></i></a>
-                                        </div>
-                                    </li>
-
-                                </ul>
-                            </div>
-                            <div class="scroll-element scroll-x">
-                                <div class="scroll-element_outer">
-                                    <div class="scroll-element_size"></div>
-                                    <div class="scroll-element_track"></div>
-                                    <div class="scroll-bar" style="width: 0px;"></div>
+                                            <div class="item-title">
+                                                <a style="color: black;" href="#" ng-bind="getTranslate(product.title)"
+                                                    class="ng-binding">Hồng
+                                                    trà caramel dừa đá xay</a>
+                                                <div class="item-extra note ng-binding">Ice regular size </div>
+                                                <!-- ngRepeat: option in product.options.extra -->
+                                                <div class="item-qty">
+                                                    <span class="quantity ng-binding"
+                                                        data-id="613d8ff12a6dae739d7d9858b4ee04b9"
+                                                        ng-bind="product.qty">1</span>x
+                                                    <span class="price ng-binding"
+                                                        ng-bind="product.price.toMoney()">70.000
+                                                        đ</span>
+                                                </div>
+                                            </div>
+                                            <div class="item-action" ng-hide="getDone()"
+                                                ng-click="delete($index, product)">
+                                                <a class="btn-remove" href="javascript:void(0)">
+                                                    <i style="color: black;" class="fa fa-times"></i></a>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="scroll-element scroll-y">
-                                <div class="scroll-element_outer">
-                                    <div class="scroll-element_size"></div>
-                                    <div class="scroll-element_track"></div>
-                                    <div class="scroll-bar" style="height: 0px;"></div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="cart-total text-center">
-                            <label>Tổng tiền</label> <span class="price ng-binding" ng-bind="total().money">70.000
-                                đ</span>
-                        </div>
-                        <div class="checkout-twostyle__ButtonWrapper-sc-14n4o2h-2 jKjmRt" style="padding-top: 0px;">
-                            <button type="submit" class="button__StyledButton-sc-6gren8-0 hCwjNQ btnCheckout"
-                                disabled="">Thanh toán</button>
+                            <div class="cart-total text-center">
+                                <label>Tổng tiền</label> <span id="all-total" class="price ng-binding" ng-bind="total().money">100.000 đ</span>
+                            </div>
+                            <div class="checkout-twostyle__ButtonWrapper-sc-14n4o2h-2 jKjmRt" style="padding-top: 0px;">
+                                <button type="submit" class="button__StyledButton-sc-6gren8-0 hCwjNQ btnCheckout"
+                                     onclick="pay()">Thanh toán</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -106,20 +95,20 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <a style="color: #0c713d;" class="nav_a" href="#">TRANG CHỦ <span
+                            <a style="color: #0c713d;" class="nav_a" href="#" onclick="home()">TRANG CHỦ <span
                                     class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav_a" href="#">CÀ PHÊ</a>
+                            <a class="nav_a" href="#" onclick="cafe()">CÀ PHÊ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav_a" href="#">TRÀ</a>
+                            <a class="nav_a" href="#" onclick="tea()">TRÀ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav_a" href="#">THỨC UỐNG</a>
+                            <a class="nav_a" href="#" onclick="menu()">THỨC UỐNG</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav_a" href="#">SẢN PHẨM</a>
+                            <a class="nav_a" href="#" onclick="pay()">THANH TOÁN</a>
                         </li>
                     </ul>
                 </div>
@@ -133,7 +122,7 @@
                     class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://phuclong.com.vn/uploads/banner/0478c9171f2d4d-600x250tchuuco.jpg"
+                <img src="https://phuclong.com.vn/uploads/banner/8193dee7c09690-z4625076372031_3b19bd81133a1823a15ec7b67088fa15.jpg"
                     class="d-block w-100" alt="...">
             </div>
 
@@ -276,6 +265,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+    <script src="./js/javascriptshow.js"></script>
+
 
 </body>
 

@@ -11,14 +11,14 @@ function createAccount(username, password) {
 }
 
 function login() {
-    window.location.replace('/index.html');
+    window.location.replace('/login.html');
 }
 
 function sign() {
-    window.location.replace('/index1.html');
+    window.location.replace('/signup.html');
 }
 function home() {
-    window.location.replace('/index2.html');
+    window.location.replace('/index.html');
 }
 
 
@@ -29,10 +29,12 @@ form.addEventListener('submit', function (event) {
     const newAccount = localStorage.getItem('newAccount');
     const data = JSON.parse(newAccount);
     if (data.username === username && data.password === password) {
-        alert('Đăng nhập thành công!');
-        window.location.replace('/index2.html');
+        swal("Đăng nhập thành công!", "", "success");
+        setTimeout(function () {
+            window.location.replace('/index.html');
+        }, 1500);
     } else {
-        alert('Tên đăng nhập hoặc mật khẩu không chính xác!');
+        swal("Tên đăng nhập hoặc mật khẩu không chính xác!", "", "error");
     }
 });
 
@@ -43,11 +45,13 @@ form.addEventListener('submit', function (event) {
     const password1 = document.querySelector('#password2').value;
     if (username.length !== 0 && password === password1) {
         createAccount(username, password);
-        alert('Tài khoản đã được tạo thành công!');
-        window.location.replace('/index.html');
-        form.reset();
+        swal("Tài khoản đã được tạo thành công!", "", "success");
+        setTimeout(function () {
+            window.location.replace('/login.html');
+            form.reset();
+        }, 1500);
     } else {
-        alert('Tên đăng nhập hoặc mật khẩu không hợp lệ. Vui lòng thử lại!');
+        swal("Tên đăng nhập hoặc mật khẩu không hợp lệ. Vui lòng thử lại!", "", "error");
     }
 });
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trà</title>
+    <title>Giỏ Hàng</title>
     <link rel="icon" href="https://phuclong.com.vn/images/logo.png" sizes="32x32">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/test.css">
@@ -25,13 +25,15 @@
             <div class="h_right_sub">
                 <a href="#" onclick="login()"><strong>Đăng nhập</strong></a>
                 <div class="h_right">
-                    <button class="show_hang">Giỏ hàng <i class="fa-solid fa-cart-shopping"></i>
+                    <button class="show_hang" style="color: white; background: #0c713d;">Giỏ hàng <i
+                            class="fa-solid fa-cart-shopping"></i>
                     </button>
                     <!-- Show giỏ hàng -->
                     <div id="mini-cart" class="mini-cart">
                         <div class="mini-cart__content">
                             <div class="cart-info">
-                                Giỏ hàng của bạn <a name="checkout" href="#" class="btn btn-default" onclick="cart()"> Xem
+                                Giỏ hàng của bạn <a name="checkout" href="#" class="btn btn-default" onclick="cart()">
+                                    Xem
                                     chi tiết </a>
                             </div>
 
@@ -75,11 +77,12 @@
                             </div>
 
                             <div class="cart-total text-center">
-                                <label>Tổng tiền</label> <span id="all-total" class="price ng-binding" ng-bind="total().money">100.000 đ</span>
+                                <label>Tổng tiền</label> <span id="all-total" class="price ng-binding"
+                                    ng-bind="total().money">100.000 đ</span>
                             </div>
                             <div class="checkout-twostyle__ButtonWrapper-sc-14n4o2h-2 jKjmRt" style="padding-top: 0px;">
                                 <button type="submit" class="button__StyledButton-sc-6gren8-0 hCwjNQ btnCheckout"
-                                     onclick="pay()">Thanh toán</button>
+                                    onclick="pay()">Thanh toán</button>
                             </div>
                         </div>
                     </div>
@@ -102,7 +105,7 @@
                             <a class="nav_a" href="#" onclick="cafe()">CÀ PHÊ</a>
                         </li>
                         <li class="nav-item">
-                            <a style="color: #0c713d;" class="nav_a" href="#" onclick="tea()">TRÀ</a>
+                            <a class="nav_a" href="#" onclick="tea()">TRÀ</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav_a" href="#" onclick="menu()">THỨC UỐNG</a>
@@ -115,11 +118,14 @@
             </nav>
         </div>
     </header>
+    <div class="container">
+
+    </div>
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://phuclong.com.vn/uploads/category/aa17dafb29b433-cphphclong3.jpg" class="d-block w-100"
-                    alt="...">
+                <img src="https://phuclong.com.vn/uploads/category/ef669d136f6f12-286634babe2fbagdnpeach_1920576oldngsize.png"
+                    class="d-block w-100" alt="...">
             </div>
         </div>
     </div>
@@ -128,67 +134,74 @@
             <ul class="breadcrumb" aria-label="breadcrumbs">
                 <li><a href="#" onclick="home()">Trang chủ</a></li>
                 <P>/</P>
-                <li class="active"><a style="color: #777" href="#" onclick="tea()">Lá trà Phúc Long</a></li>
+                <li class="active"><a style="color: #777" href="#" onclick="cart()">Giỏ Hàng</a></li>
             </ul>
-            <h1>LÁ TRÀ PHÚC LONG</h1>
+            <h1>Giỏ Hàng</h1>
             <div class="separator-icon gray">
                 <img src="https://phuclong.com.vn/images/icon_tealeaves.png" alt="">
             </div>
-            <div class="content">
-                <div class="content_logo">
-                    <img style="height: 320px;"
-                        src="https://phuclong.com.vn/upload/files/2/tra%20cafe/tr%C3%A0%20ph%C3%BAc%20long%201.jpg"
-                        alt="">
-                </div>
-                <div class="content_text">
-                    <div class="col-ct-6">
-                        <h2></h2>
-                        Một cây trà nếu được trồng ở những vùng đất có độ cao và khí hậu khác nhau thì sẽ thu được những
-                        loại trà cũng khác nhau. Có thể thấy sự phức tạp đến từ phía bên trong, từ những thành phần cũng
-                        như cấu tạo hoá học độc nhất vô nhị mà chỉ mình cây trà có được. Thấu hiểu điều đó, để giữ trọn
-                        vị tươi nguyên, bảo toàn dưỡng chất tốt nhất, một búp và hai lá non thường được chúng tôi thu
-                        hái vào thời điểm sáng sớm. Tiếp đến, quy trình sản xuất để cho ra các sản phẩm trà chất lượng
-                        cũng được thực hiện khép kín.
+            <div class="container__cart">
+                <div class="row col-md-12">
+                    <div class="title__cart-product col-md-3 card__sub">
+                        <p style="margin: 0;"> Sản Phẩm</p>
+                    </div>
+                    <div class="title__cart-imfor col-md-9 card__sub">
+                        <p style="margin: 0;" class="col-md-3"> Giá bán</p>
+                        <p style="margin: 0;" class="col-md-3"> Số lượng</p>
+                        <p style="margin: 0;" class="col-md-3" style="margin-right: 1.5em;"> Tổng tiền</p>
                     </div>
                 </div>
-            </div>
-            <div class="content content_sub">
-                <div class="content_logo">
-                    <img style="height: 320px;"
-                        src="https://phuclong.com.vn/upload/files/2/tra%20cafe/tr%C3%A0%20ph%C3%BAc%20long%202.jpg"
-                        alt="">
+                <div class="card_render">
+                    <div class="row col-md-12 cart__show">
+                        <div class="carl__product col-md-3">
+                            <img src="https://phuclong.com.vn/uploads/dish/c4692e6548c0af-65000306hngtrcarameldaxay.png"
+                                width="20%" alt="Ảnh">
+                            <strong> Hồng trà caramel dừa đá xay</strong>
+                        </div>
+                        <div class="cart__price col-md-9 card__sub">
+                            <div class="cart__price-item col-md-3" style="font-size: 18px;"> 50.000
+                                đ </div>
+                            <div class="cart__price-item col-md-3 ">
+                                <button class="decrease"> - </button>
+                                <span style="margin: 0 10px;" class="quantity">1</span>
+                                <button class="increase"> + </button>
+                            </div>
+                            <div class="cart__price-item col-md-3" style="font-size: 18px;"> 50.000
+                                đ </div>
+                        </div>
+                        <div class="closesub" style="width: auto !important;">
+                            <i class="fa-solid fa-x"></i>
+                        </div>
+                    </div>
+                    
+
                 </div>
-                <div class="content_text">
-                    <div class="col-ct-6">
-                        <h2></h2>
-                        Trong quá trình tìm kiếm từng loại trà thượng hạng, Phúc Long luôn giữ gìn những hợp chất đặc
-                        biệt từ lá trà để làm nên tách trà đậm vị. <br>
-                        - Theanine (vị ngon) là cảm nhận được trạng thái tỉnh táo, tràn đầy năng lượng khi thưởng thức
-                        trà.<br>
-                        - Carbohydrate (vị ngọt) là đường tích trữ trong lá trà.<br>
-                        - Polyphenols (vị chát) là thành phần đặc biệt có nhiều trong lá trà non.<br>
-                        - Caffein (vị đắng) là thành phần bị ảnh hưởng bởi 2 yếu tố: nhiệt độ nước và cách ngâm. Để tiết
-                        chế caffein, khi pha nên dùng nước nhiệt độ vừa phải và giảm thời gian ngâm trà.<br>
-                        - Enzyme (men) là chất xúc tác sinh học thúc đẩy quá trình lên men của lá trà
+                <div class="price__cart-total">
+                    <p style="font-size: 24px;">Tổng cộng :</p>
+                    <strong id="all-total-sub" style="font-size: 24px; color:red;"> 150.000 đ</strong>
+                </div>
+                <div class="checkout-twostyle__ButtonWrapper-sc-14n4o2h-2 jKjmRt"
+                    style="padding-top: 0px; margin-top: 50px; display: flex; align-items: center; justify-content: center;">
+                    <button style="max-width: 600px;" type="submit"
+                        class="button__StyledButton-sc-6gren8-0 hCwjNQ btnCheckout" onclick="pay()">Thanh toán</button>
+                </div>
+            </div>
+            <!-- <div class="content content_sub" id="card-show">
+                <div class="card">
+                    <div class="card_logo">
+                        <img src="https://phuclong.com.vn/uploads/dish/c4692e6548c0af-65000306hngtrcarameldaxay.png"
+                            alt="...">
+                    </div>
+                    <div class="card_content">
+
+                    </div>
+                    <div class="card_price">
+
                     </div>
                 </div>
-            </div>
-            <div class="content">
-                <div class="content_logo">
-                    <img style="height: 320px;"
-                        src="https://phuclong.com.vn/upload/files/2/tra%20cafe/Dam%20vi%20ca%20phe%203''.jpg" alt="">
-                </div>
-                <div class="content_text">
-                    <div class="col-ct-6">
-                        <h2></h2>
-                        Phúc Long thấu hiểu để có được một tách trà ngon thì từ quá trình thu hái lá trà cho đến quá
-                        trình sao chế và pha trà cũng cần phải chuẩn xác. Khi sao trà cần phải canh lửa vừa vặn, khi pha
-                        trà nhiệt độ nước cũng vừa phải. Để giờ đây, cầm trên tay tách trà ngát hương, nhâm nhi trọn vị
-                        trà truyền thống như là một cách thể hiện tâm tình đối với cuộc sống, cảm thụ hương vị tự nhiên
-                        toát ra từ lá trà, lòng an nhiên trước bao bộn bề.
-                    </div>
-                </div>
-            </div>
+
+            </div> -->
+
         </div>
     </div>
     <footer id="footer">
@@ -273,8 +286,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <script src="./js/javascriptshow.js"></script>
-
+    <script src="./js/javascriptcart.js"></script>
 
 </body>
 

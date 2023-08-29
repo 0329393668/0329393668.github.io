@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thức Uống</title>
+    <link rel="icon" href="https://phuclong.com.vn/images/logo.png" sizes="32x32">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/test.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -21,77 +22,65 @@
             <div class="h_logo">
                 <img src="https://phuclong.com.vn/images/logo_2.png" alt="Logo">
             </div>
-            <div class="h_right">
-                <a href="#"><strong>Đăng nhập</strong></a>
-                <button class="show_hang">Giỏ hàng <i class="fa-solid fa-cart-shopping"></i>
-                </button>
-                <div id="mini-cart" class="mini-cart">
-                    <div class="mini-cart__content">
-                        <div class="cart-info">
-                            Giỏ hàng của bạn <a name="checkout" href="#"
-                                class="btn btn-default"> Xem
-                                chi tiết </a>
-                        </div>
+            <div class="h_right_sub">
+                <a href="#" onclick="login()"><strong>Đăng nhập</strong></a>
+                <div class="h_right">
+                    <button class="show_hang">Giỏ hàng <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                    <!-- Show giỏ hàng -->
+                    <div id="mini-cart" class="mini-cart">
+                        <div class="mini-cart__content">
+                            <div class="cart-info">
+                                Giỏ hàng của bạn <a name="checkout" href="#" class="btn btn-default" onclick="cart()"> Xem
+                                    chi tiết </a>
+                            </div>
 
-                        <div class="scroll-wrapper scrollbar-macosx" style="position: relative;">
-                            <div class="scrollbar-macosx scroll-content"
-                                style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 25px;">
-                                <ul style="padding-left: inherit;" class="cart-list">
-                                    <!-- ngRepeat: product in products -->
-                                    <li class="cart-list__item ng-scope first" ng-repeat="product in products"
-                                        ng-class="{ first: $index === 0 }">
-                                        <div class="item-thumb">
-                                            <a href="#" title="" class="">
-                                                <img ng-src="https://phuclong.com.vn/uploads/dish/c4692e6548c0af-65000306hngtrcarameldaxay.png"
-                                                    alt=""
-                                                    src="https://phuclong.com.vn/uploads/dish/c4692e6548c0af-65000306hngtrcarameldaxay.png">
-                                            </a>
-                                        </div>
-                                        <div class="item-title">
-                                            <a style="color: black;" href="#" ng-bind="getTranslate(product.title)"
-                                                class="ng-binding">Hồng
-                                                trà caramel dừa đá xay</a>
-                                            <div class="item-extra note ng-binding">Ice regular size </div>
-                                            <!-- ngRepeat: option in product.options.extra -->
-                                            <div class="item-qty">
-                                                <span class="quantity ng-binding"
-                                                    data-id="613d8ff12a6dae739d7d9858b4ee04b9"
-                                                    ng-bind="product.qty">1</span>x
-                                                <span class="price ng-binding" ng-bind="product.price.toMoney()">70.000
-                                                    đ</span>
+                            <div class="scroll-wrapper scrollbar-macosx" style="position: relative;">
+                                <div class="scrollbar-macosx scroll-content"
+                                    style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 150px; overflow: auto;">
+                                    <ul style="padding-left: inherit;" class="cart-list">
+                                        <!-- ngRepeat: product in products -->
+                                        <li class="cart-list__item ng-scope first" ng-repeat="product in products"
+                                            ng-class="{ first: $index === 0 }">
+                                            <div class="item-thumb">
+                                                <a href="#" title="" class="">
+                                                    <img ng-src="https://phuclong.com.vn/uploads/dish/c4692e6548c0af-65000306hngtrcarameldaxay.png"
+                                                        alt=""
+                                                        src="https://phuclong.com.vn/uploads/dish/c4692e6548c0af-65000306hngtrcarameldaxay.png">
+                                                </a>
                                             </div>
-                                        </div>
-                                        <div class="item-action" ng-hide="getDone()" ng-click="delete($index, product)">
-                                            <a class="btn-remove" href="javascript:void(0)">
-                                                <i style="color: black;" class="fa fa-times"></i></a>
-                                        </div>
-                                    </li>
-
-                                </ul>
-                            </div>
-                            <div class="scroll-element scroll-x">
-                                <div class="scroll-element_outer">
-                                    <div class="scroll-element_size"></div>
-                                    <div class="scroll-element_track"></div>
-                                    <div class="scroll-bar" style="width: 0px;"></div>
+                                            <div class="item-title">
+                                                <a style="color: black;" href="#" ng-bind="getTranslate(product.title)"
+                                                    class="ng-binding">Hồng
+                                                    trà caramel dừa đá xay</a>
+                                                <div class="item-extra note ng-binding">Ice regular size </div>
+                                                <!-- ngRepeat: option in product.options.extra -->
+                                                <div class="item-qty">
+                                                    <span class="quantity ng-binding"
+                                                        data-id="613d8ff12a6dae739d7d9858b4ee04b9"
+                                                        ng-bind="product.qty">1</span>x
+                                                    <span class="price ng-binding"
+                                                        ng-bind="product.price.toMoney()">70.000
+                                                        đ</span>
+                                                </div>
+                                            </div>
+                                            <div class="item-action" ng-hide="getDone()"
+                                                ng-click="delete($index, product)">
+                                                <a class="btn-remove" href="javascript:void(0)">
+                                                    <i style="color: black;" class="fa fa-times"></i></a>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="scroll-element scroll-y">
-                                <div class="scroll-element_outer">
-                                    <div class="scroll-element_size"></div>
-                                    <div class="scroll-element_track"></div>
-                                    <div class="scroll-bar" style="height: 0px;"></div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="cart-total text-center">
-                            <label>Tổng tiền</label> <span class="price ng-binding" ng-bind="total().money">70.000
-                                đ</span>
-                        </div>
-                        <div class="checkout-twostyle__ButtonWrapper-sc-14n4o2h-2 jKjmRt" style="padding-top: 0px;">
-                            <button type="submit" class="button__StyledButton-sc-6gren8-0 hCwjNQ btnCheckout"
-                                disabled="">Thanh toán</button>
+                            <div class="cart-total text-center">
+                                <label>Tổng tiền</label> <span id="all-total" class="price ng-binding" ng-bind="total().money"></span>
+                            </div>
+                            <div class="checkout-twostyle__ButtonWrapper-sc-14n4o2h-2 jKjmRt" style="padding-top: 0px;">
+                                <button type="submit" class="button__StyledButton-sc-6gren8-0 hCwjNQ btnCheckout"
+                                     onclick="pay()">Thanh toán</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -106,20 +95,20 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <a style="color: #0c713d;" class="nav_a" href="#">TRANG CHỦ <span
+                            <a class="nav_a" href="#" onclick="home()">TRANG CHỦ <span
                                     class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav_a" href="#">CÀ PHÊ</a>
+                            <a class="nav_a" href="#" onclick="cafe()">CÀ PHÊ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav_a" href="#">TRÀ</a>
+                            <a class="nav_a" href="#" onclick="tea()">TRÀ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav_a" href="#">THỨC UỐNG</a>
+                            <a style="color: #0c713d;" class="nav_a" href="#" onclick="menu()">THỨC UỐNG</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav_a" href="#">SẢN PHẨM</a>
+                            <a class="nav_a" href="#" onclick="pay()">THANH TOÁN</a>
                         </li>
                     </ul>
                 </div>
@@ -137,59 +126,57 @@
     <div class="b_container_menu1">
         <div class="container">
             <ul class="breadcrumb" aria-label="breadcrumbs">
-                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#" onclick="home()">Trang chủ</a></li>
                 <P>/</P>
-                <li class="active"><a style="color: #777" href="#">Thức uống</a></li>
+                <li class="active"><a style="color: #777" href="#" onclick="menu()">Thức uống</a></li>
             </ul>
             <h1>Thức uống</h1>
             <div class="separator-icon gray">
                 <img src="https://phuclong.com.vn/images/icon_tealeaves.png" alt="">
             </div>
             <div style="margin: 20px 0;" class="row">
-                <form id="category_filter" class="form-inline ng-pristine ng-valid" action="#">
-                    <div class="category_filter_1 col-xs-12 col-md-6 col-sm-6 text-center ">
-                        <label for="price-range">Theo giá</label>
-                        <div class="btn-group bootstrap-select">
-                            <div class="dropdown-menu open" role="combobox">
-                                <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
-                                    <li data-original-index="0" class="selected"><a tabindex="0" class=""
-                                            data-tokens="null" role="option" aria-disabled="false"
-                                            aria-selected="true"><span class="text">Không lựa chọn</span><span
-                                                class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                                    <li data-original-index="1"><a tabindex="0" class="" data-tokens="null"
-                                            role="option" aria-disabled="false" aria-selected="false"><span
-                                                class="text">Từ thấp đến cao</span><span
-                                                class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                                    <li data-original-index="2"><a tabindex="0" class="" data-tokens="null"
-                                            role="option" aria-disabled="false" aria-selected="false"><span
-                                                class="text">Từ cao đến thấp</span><span
-                                                class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                                </ul>
-                            </div><select name="price-range" class="selectpicker" tabindex="-98">
-                                <option selected="" value="">Không lựa chọn</option>
-                                <option value="asc">Từ thấp đến cao</option>
-                                <option value="desc">Từ cao đến thấp</option>
-                            </select>
+                <!-- <form id="category_filter" class="form-inline ng-pristine ng-valid"> -->
+                <div class="category_filter_1 col-xs-12 col-md-6 col-sm-6 text-center ">
+                    <label for="price-range">Theo giá</label>
+                    <div class="btn-group bootstrap-select">
+                        <div class="dropdown-menu open" role="combobox">
+                            <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
+                                <li data-original-index="0" class="selected"><a tabindex="0" class="" data-tokens="null"
+                                        role="option" aria-disabled="false" aria-selected="true"><span
+                                            class="text">Không lựa chọn</span><span
+                                            class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                <li data-original-index="1"><a tabindex="0" class="" data-tokens="null" role="option"
+                                        aria-disabled="false" aria-selected="false"><span class="text">Từ thấp đến
+                                            cao</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                <li data-original-index="2"><a tabindex="0" class="" data-tokens="null" role="option"
+                                        aria-disabled="false" aria-selected="false"><span class="text">Từ cao đến
+                                            thấp</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                            </ul>
+                        </div><select name="price-range" class="selectpicker" tabindex="-98" id="price-range-select">
+                            <option selected="" value="">Không lựa chọn</option>
+                            <option value="asc">Từ thấp đến cao</option>
+                            <option value="desc">Từ cao đến thấp</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="category_filter_2 col-xs-12 col-sm-6 col-md-6 text-center">
+                    <label for="product-name">Tìm kiếm</label>
+                    <div class="input-group add-on">
+                        <input class="form-control" placeholder="Tên sản phẩm" name="keyword" id="search-term"
+                            type="text" value="">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit" id="search-btn"><i
+                                    class="fa fa-search"></i></button>
                         </div>
                     </div>
-                    <div class="category_filter_2 col-xs-12 col-sm-6 col-md-6 text-center ">
-                        <label for="product-name"> Tìm kiếm</label>
-                        <div class="input-group add-on">
-                            <input class="form-control" placeholder="Tên sản phẩm" name="keyword" id="srch-term"
-                                type="text" value="">
-                            <div class="input-group-btn">
-                                <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
-                            </div>
-                        </div>
-                    </div>
+                </div>
 
-                </form>
+                <!-- </form> -->
             </div>
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog">
-
                     <div class="modal-content" ng-show="isTab(1)">
                         <div class="modal-body product-modal">
                             <button style="float: right;" type="button" class="btn-close" data-bs-dismiss="modal"
@@ -197,7 +184,7 @@
                             <div class="row">
                                 <div class="col-md-5">
                                     <img style="display: block;
-                                    max-width: 100%;
+                                    max-width: 80%;
                                     height: auto;" class="item-img img-responsive center-block"
                                         ng-src="https://phuclong.com.vn/uploads/dish/437b59a57e7efd-6500030465000305trlongdacaramel.png"
                                         src="https://phuclong.com.vn/uploads/dish/437b59a57e7efd-6500030465000305trlongdacaramel.png">
@@ -210,7 +197,7 @@
 
 
                                 </div>
-                                <div class="col-md-7">
+                                <div class="col-md-7" style="padding-top: 40px;">
                                     <div class="item-info">
                                         <div
                                             class="item-info__name hidden-xs hidden-sm visible-md visible-lg ng-binding">
@@ -248,9 +235,10 @@
 
                                             <div class="add-item">
                                                 <span class="change-qty decrease"
-                                                    ng-click="decrease(product)">-</span><span
-                                                    class="quantity ng-binding">1</span><span
-                                                    class="change-qty increase" ng-click="increase(product)">+</span>
+                                                    onclick="decreaseQuantity(this)">-</span>
+                                                <span class="quantity">1</span>
+                                                <span class="change-qty increase"
+                                                    onclick="increaseQuantity(this)">+</span>
                                             </div>
 
                                         </div>
@@ -263,11 +251,10 @@
 
                                     <div class="product-action">
 
-                                        <button class="btn btn-default add-to-cart single" data-id="685"
+                                        <button id="add-to-cart-dh" class="btn btn-default add-to-cart single" data-id="685"
                                             data-dismiss="modal">Đặt hàng</button>
 
                                         <!--        <a name="checkout" class="btn btn-default" href="https://phuclong.com.vn/thanh-toan"> Thanh toán</a> -->
-
 
                                         <input type="hidden" name="productSize"
                                             value="{&quot;title&quot;:&quot;[:vi]Ice regular size[:en]Ice regular size[:]&quot;,&quot;id&quot;:2,&quot;price&quot;:55000}">
@@ -286,11 +273,9 @@
                 </div>
             </div>
             <!--  -->
-            <div style="margin-top: 20px;" class="row">
-
+            <div style="margin-top: 20px;" class="row product-list-item">
                 <div class=" col-sm-3 col-xs-6  product-item ">
                     <a class="item-wrapper">
-                        <span class="badge new">Món mới</span>
                         <img class="item-img img-responsive center-block lazy"
                             data-original="https://phuclong.com.vn/uploads/dish/c4692e6548c0af-65000306hngtrcarameldaxay.png"
                             alt="Hồng trà caramel dừa đá xay"
@@ -307,718 +292,10 @@
                             <!-- Test modal -->
                             <button type="button" class="btn btn-default add-to-cart" data-id="683"
                                 data-name="Hồng trà caramel dừa đá xay" data-price="70000" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">Đặt hàng</button>
+                                data-bs-target="#exampleModal" onclick="show()">Đặt hàng</button>
                         </div>
                     </a>
                 </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <span class="badge new">Món mới</span>
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/1fc4620223d5c3-6500030265000303hngtrsacaramel.png"
-                            alt="Hồng trà sữa Caramel"
-                            src="https://phuclong.com.vn/uploads/dish/1fc4620223d5c3-6500030265000303hngtrsacaramel.png"
-                            style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Hồng trà sữa Caramel</div>
-
-                            <div class="item-desc">
-
-                            </div>
-                            <div class="item-price">55.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="684" data-name="Hồng trà sữa Caramel"
-                                data-price="55000">Đặt hàng</button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <span class="badge new">Món mới</span>
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/437b59a57e7efd-6500030465000305trlongdacaramel.png"
-                            alt="Trà Ô long dừa Caramel"
-                            src="https://phuclong.com.vn/uploads/dish/437b59a57e7efd-6500030465000305trlongdacaramel.png"
-                            style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Trà Ô long dừa Caramel</div>
-
-                            <div class="item-desc">
-
-                            </div>
-                            <div class="item-price">55.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="685" data-name="Trà Ô long dừa Caramel"
-                                data-price="55000">Đặt hàng</button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <span class="badge new">Món mới</span>
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/37702760a2b2e3-65000309nhnxay.png"
-                            alt="Nhãn Đá Xay"
-                            src="https://phuclong.com.vn/uploads/dish/37702760a2b2e3-65000309nhnxay.png" style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Nhãn Đá Xay</div>
-
-                            <div class="item-desc">
-
-                            </div>
-                            <div class="item-price">70.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="687" data-name="Nhãn Đá Xay"
-                                data-price="70000">Đặt hàng</button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <span class="badge new">Món mới</span>
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/a66aecd5b760eb-traolongmangcau.png"
-                            alt="Trà Ô Long Mãng Cầu"
-                            src="https://phuclong.com.vn/uploads/dish/a66aecd5b760eb-traolongmangcau.png" style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Trà Ô Long Mãng Cầu</div>
-
-                            <div class="item-desc">
-
-                            </div>
-                            <div class="item-price">50.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="667" data-name="Trà Ô Long Mãng Cầu"
-                                data-price="50000">Đặt hàng</button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/4d247cffb2c4d5-hngtrchanh.png"
-                            alt="Hồng Trà Chanh"
-                            src="https://phuclong.com.vn/uploads/dish/4d247cffb2c4d5-hngtrchanh.png" style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Hồng Trà Chanh</div>
-
-                            <div class="item-desc">
-                                Lime Black Tea
-                            </div>
-                            <div class="item-price">35.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="512" data-name="Hồng Trà Chanh"
-                                data-price="35000">Đặt hàng</button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/d1cd8bafdefe9d-matchalattephclong.png"
-                            alt="Trà Sữa Matcha"
-                            src="https://phuclong.com.vn/uploads/dish/d1cd8bafdefe9d-matchalattephclong.png" style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Trà Sữa Matcha</div>
-
-                            <div class="item-desc">
-                                Matcha Milk Tea
-                            </div>
-                            <div class="item-price">40.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="132" data-name="Trà Sữa Matcha"
-                                data-price="40000">Đặt hàng</button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/a75db2931ab34c-hngtrsaphclongtrosaphclong.png"
-                            alt="Hồng Trà Đào Sữa"
-                            src="https://phuclong.com.vn/uploads/dish/a75db2931ab34c-hngtrsaphclongtrosaphclong.png"
-                            style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Hồng Trà Đào Sữa</div>
-
-                            <div class="item-desc">
-                                Peach Black Milk Tea
-                            </div>
-                            <div class="item-price">50.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="121" data-name="Hồng Trà Đào Sữa"
-                                data-price="50000">Đặt hàng</button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/64bd44180be24c-sinhtchanh.png"
-                            alt="Chanh Đá Xay" src="https://phuclong.com.vn/uploads/dish/64bd44180be24c-sinhtchanh.png"
-                            style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Chanh Đá Xay</div>
-
-                            <div class="item-desc">
-                                Lime Ice Blended
-                            </div>
-                            <div class="item-price">50.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="137" data-name="Chanh Đá Xay"
-                                data-price="50000">Đặt hàng</button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/5db8d7830383fe-trxanhxay.png"
-                            alt="Matcha Đá Xay" src="https://phuclong.com.vn/uploads/dish/5db8d7830383fe-trxanhxay.png"
-                            style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Matcha Đá Xay</div>
-
-                            <div class="item-desc">
-                                Matcha Ice Blended
-                            </div>
-                            <div class="item-price">60.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="235" data-name="Matcha Đá Xay"
-                                data-price="60000">Đặt hàng</button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/72781119ecd681-sclaxaycnghnhnhnvespresso.png"
-                            alt="Oreo Cà Phê Sữa Đá Xay"
-                            src="https://phuclong.com.vn/uploads/dish/72781119ecd681-sclaxaycnghnhnhnvespresso.png"
-                            style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Oreo Cà Phê Sữa Đá Xay</div>
-
-                            <div class="item-desc">
-                                Oreo Espresso Ice Blended
-                            </div>
-                            <div class="item-price">60.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="233" data-name="Oreo Cà Phê Sữa Đá Xay"
-                                data-price="60000">Đặt hàng</button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/d12b476cb8261d-cphcappuccinoxay.png"
-                            alt="Cà Phê Đá Xay"
-                            src="https://phuclong.com.vn/uploads/dish/d12b476cb8261d-cphcappuccinoxay.png" style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Cà Phê Đá Xay</div>
-
-                            <div class="item-desc">
-                                Espresso Ice Blended
-                            </div>
-                            <div class="item-price">60.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="232" data-name="Cà Phê Đá Xay"
-                                data-price="60000">Đặt hàng</button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <span class="badge new">Món mới</span>
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/4bab552f7ed0a6-trasuaberryberry60000839.png"
-                            alt="Trà sữa Berry Berry"
-                            src="https://phuclong.com.vn/uploads/dish/4bab552f7ed0a6-trasuaberryberry60000839.png"
-                            style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Trà sữa Berry Berry</div>
-
-                            <div class="item-desc">
-
-                            </div>
-                            <div class="item-price">60.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="682" data-name="Trà sữa Berry Berry"
-                                data-price="60000">Đặt hàng</button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/84c7b821bde822-troxay.png"
-                            alt="Trà Đào đá xay" src="https://phuclong.com.vn/uploads/dish/84c7b821bde822-troxay.png"
-                            style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Trà Đào đá xay</div>
-
-                            <div class="item-desc">
-                                Peach Tea
-                            </div>
-                            <div class="item-price">65.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="226" data-name="Trà Đào đá xay"
-                                data-price="65000">Đặt hàng</button>
-                            <div class="hidden combo-info">
-
-
-
-                                <div class="combo-item" data-title="Đào thêm (3 Pcs)"
-                                    data-img="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk2AQAALgAtFVIVl0AAAAASUVORK5CYII"
-                                    data-price="14727" data-extraid="170"></div>
-
-
-                                <div class="combo-item" data-title="Sữa tươi (80 ml)"
-                                    data-img="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk2AQAALgAtFVIVl0AAAAASUVORK5CYII"
-                                    data-price="9818" data-extraid="172"></div>
-
-
-                                <div class="combo-item" data-title="Coffee Jelly"
-                                    data-img="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk2AQAALgAtFVIVl0AAAAASUVORK5CYII"
-                                    data-price="14727" data-extraid="175"></div>
-
-
-
-
-
-
-                                <div class="combo-item" data-title="Whipped cream"
-                                    data-img="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk2AQAALgAtFVIVl0AAAAASUVORK5CYII"
-                                    data-price="14727" data-extraid="202"></div>
-
-
-
-
-
-                                <div class="combo-item" data-title="Bánh Flan"
-                                    data-img="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk2AQAALgAtFVIVl0AAAAASUVORK5CYII"
-                                    data-price="19637" data-extraid="517"></div>
-
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/4136b3715bff3e-sachuaphcbntccamphclong.png"
-                            alt="Sữa Chua Phúc Bồn Tử Đác Cam"
-                            src="https://phuclong.com.vn/uploads/dish/4136b3715bff3e-sachuaphcbntccamphclong.png"
-                            style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Sữa Chua Phúc Bồn Tử Đác Cam</div>
-
-                            <div class="item-desc">
-                                Raspberry Yogurt with Orange Dac Seed
-                            </div>
-                            <div class="item-price">70.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="594"
-                                data-name="Sữa Chua Phúc Bồn Tử Đác Cam" data-price="70000">Đặt hàng</button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/65a7d028c2229d-sachuaxoicthmphclong.png"
-                            alt="Sữa Chua Xoài Đác Thơm"
-                            src="https://phuclong.com.vn/uploads/dish/65a7d028c2229d-sachuaxoicthmphclong.png" style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Sữa Chua Xoài Đác Thơm</div>
-
-                            <div class="item-desc">
-                                Mango Yogurt with Pineapple Dac Seed
-                            </div>
-                            <div class="item-price">70.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="592" data-name="Sữa Chua Xoài Đác Thơm"
-                                data-price="70000">Đặt hàng</button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/90405a9f256f11-cafe5mon04.png"
-                            alt="Cappuccino" src="https://phuclong.com.vn/uploads/dish/90405a9f256f11-cafe5mon04.png"
-                            style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Cappuccino</div>
-
-                            <div class="item-desc">
-
-                            </div>
-                            <div class="item-price">45.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="660" data-name="Cappuccino"
-                                data-price="45000">Đặt hàng</button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/dae727e03e8092-daccam.png"
-                            alt="Hồng Trà Đác Cam Đá Xay"
-                            src="https://phuclong.com.vn/uploads/dish/dae727e03e8092-daccam.png" style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Hồng Trà Đác Cam Đá Xay</div>
-
-                            <div class="item-desc">
-                                Orange Dac Seed Black Tea Ice Blended
-                            </div>
-                            <div class="item-price">70.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="551"
-                                data-name="Hồng Trà Đác Cam Đá Xay" data-price="70000">Đặt hàng</button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <span class="badge new">Món mới</span>
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/d1c388a9975c2c-hoatuyetberry60000838.png"
-                            alt="Hoa Tuyết Berry Berry"
-                            src="https://phuclong.com.vn/uploads/dish/d1c388a9975c2c-hoatuyetberry60000838.png"
-                            style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Hoa Tuyết Berry Berry</div>
-
-                            <div class="item-desc">
-
-                            </div>
-                            <div class="item-price">70.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="681" data-name="Hoa Tuyết Berry Berry"
-                                data-price="70000">Đặt hàng</button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/8a92bb4b37c012-cafe5mon01.png"
-                            alt="Latte" src="https://phuclong.com.vn/uploads/dish/8a92bb4b37c012-cafe5mon01.png"
-                            style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Latte</div>
-
-                            <div class="item-desc">
-
-                            </div>
-                            <div class="item-price">45.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="659" data-name="Latte"
-                                data-price="45000">Đặt hàng</button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/8ebb07f0eeccc1-resize_damdadunggu07.png"
-                            alt="Phin Sữa Đá"
-                            src="https://phuclong.com.vn/uploads/dish/8ebb07f0eeccc1-resize_damdadunggu07.png" style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Phin Sữa Đá</div>
-
-                            <div class="item-desc">
-
-                            </div>
-                            <div class="item-price">35.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="632" data-name="Phin Sữa Đá"
-                                data-price="35000">Đặt hàng</button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/4521f4c77fc38a-cf67efb06d5aa504fc4b.png"
-                            alt="Phin Đen Đá"
-                            src="https://phuclong.com.vn/uploads/dish/4521f4c77fc38a-cf67efb06d5aa504fc4b.png" style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Phin Đen Đá</div>
-
-                            <div class="item-desc">
-
-                            </div>
-                            <div class="item-price">30.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="631" data-name="Phin Đen Đá"
-                                data-price="30000">Đặt hàng</button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/b8f1dd4d4f583c-dacthom.png"
-                            alt="Trà Lài Đác Thơm" src="https://phuclong.com.vn/uploads/dish/b8f1dd4d4f583c-dacthom.png"
-                            style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Trà Lài Đác Thơm</div>
-
-                            <div class="item-desc">
-                                Pineapple Dac Seed Jasmine Tea
-                            </div>
-                            <div class="item-price">50.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="552" data-name="Trà Lài Đác Thơm"
-                                data-price="50000">Đặt hàng</button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/7c8006f72742d8-trnhnphclong.png"
-                            alt="Trà Nhãn Sen"
-                            src="https://phuclong.com.vn/uploads/dish/7c8006f72742d8-trnhnphclong.png" style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Trà Nhãn Sen</div>
-
-                            <div class="item-desc">
-                                Longan Lotus Tea
-                            </div>
-                            <div class="item-price">50.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="538" data-name="Trà Nhãn Sen"
-                                data-price="50000">Đặt hàng</button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/063555c21c4206-trviliphclong.png"
-                            alt="Trà Vải Lài"
-                            src="https://phuclong.com.vn/uploads/dish/063555c21c4206-trviliphclong.png" style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Trà Vải Lài</div>
-
-                            <div class="item-desc">
-                                Lychee Jasmine Tea
-                            </div>
-                            <div class="item-price">50.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="502" data-name="Trà Vải Lài"
-                                data-price="50000">Đặt hàng</button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/5a893da4cab487-trthomcphclong.png"
-                            alt="Lucky Tea" src="https://phuclong.com.vn/uploads/dish/5a893da4cab487-trthomcphclong.png"
-                            style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Lucky Tea</div>
-
-                            <div class="item-desc">
-                                Lucky Tea
-                            </div>
-                            <div class="item-price">50.000 đ</div>
-                            <button class="btn btn-default">Liên hệ</button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/3c2d50a2c26783-hngtrsaphclongtrosaphclong.png"
-                            alt="Hồng Trà Sữa"
-                            src="https://phuclong.com.vn/uploads/dish/3c2d50a2c26783-hngtrsaphclongtrosaphclong.png"
-                            style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Hồng Trà Sữa</div>
-
-                            <div class="item-desc">
-                                Black Milk Tea
-                            </div>
-                            <div class="item-price">40.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="120" data-name="Hồng Trà Sữa"
-                                data-price="40000">Đặt hàng</button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/fdf73d348ac963-cphvanilla.png"
-                            alt="Vanilla Latte" src="https://phuclong.com.vn/uploads/dish/fdf73d348ac963-cphvanilla.png"
-                            style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Vanilla Latte</div>
-
-                            <div class="item-desc">
-                                Vanilla Latte
-                            </div>
-                            <div class="item-price">45.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="242" data-name="Vanilla Latte"
-                                data-price="45000">Đặt hàng</button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/3937476a64a213-trophclong.png"
-                            alt="Hồng Trà Đào" src="https://phuclong.com.vn/uploads/dish/3937476a64a213-trophclong.png"
-                            style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Hồng Trà Đào</div>
-
-                            <div class="item-desc">
-                                Peach Black Tea
-                            </div>
-                            <div class="item-price">45.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="139" data-name="Hồng Trà Đào"
-                                data-price="45000">Đặt hàng</button>
-                            <div class="hidden combo-info">
-
-
-
-                                <div class="combo-item" data-title="Đào thêm (3 Pcs)"
-                                    data-img="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk2AQAALgAtFVIVl0AAAAASUVORK5CYII"
-                                    data-price="14727" data-extraid="170"></div>
-
-
-
-                                <div class="combo-item" data-title="Coffee Jelly"
-                                    data-img="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk2AQAALgAtFVIVl0AAAAASUVORK5CYII"
-                                    data-price="14727" data-extraid="175"></div>
-
-
-                                <div class="combo-item" data-title="Vải thêm (4 Pcs)"
-                                    data-img="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk2AQAALgAtFVIVl0AAAAASUVORK5CYII"
-                                    data-price="14591" data-extraid="176"></div>
-
-
-
-
-
-
-
-
-                                <div class="combo-item" data-title="Nhãn thêm (4 Pcs)"
-                                    data-img="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk2AQAALgAtFVIVl0AAAAASUVORK5CYII"
-                                    data-price="14727" data-extraid="515"></div>
-
-
-                                <div class="combo-item" data-title="Bánh Flan"
-                                    data-img="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk2AQAALgAtFVIVl0AAAAASUVORK5CYII"
-                                    data-price="19637" data-extraid="517"></div>
-
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/ad7f4b76f4b694-trsaphclongtrlongsaphclong.png"
-                            alt="Trà Sữa Phúc Long"
-                            src="https://phuclong.com.vn/uploads/dish/ad7f4b76f4b694-trsaphclongtrlongsaphclong.png"
-                            style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Trà Sữa Phúc Long</div>
-
-                            <div class="item-desc">
-                                Phuc Long Milk Tea
-                            </div>
-                            <div class="item-price">40.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="118" data-name="Trà Sữa Phúc Long"
-                                data-price="40000">Đặt hàng</button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/5318362664d05b-trlongdu.png"
-                            alt="Trà Ô Long Dâu" src="https://phuclong.com.vn/uploads/dish/5318362664d05b-trlongdu.png"
-                            style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Trà Ô Long Dâu</div>
-
-                            <div class="item-desc">
-                                Strawberry Oolong Tea
-                            </div>
-                            <div class="item-price">50.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="116" data-name="Trà Ô Long Dâu"
-                                data-price="50000">Đặt hàng</button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class=" col-sm-3 col-xs-6  product-item ">
-                    <a class="item-wrapper">
-                        <img class="item-img img-responsive center-block lazy"
-                            data-original="https://phuclong.com.vn/uploads/dish/6242c5934eefec-trsaphclongtrlongsaphclong.png"
-                            alt="Trà Ô Long Sữa"
-                            src="https://phuclong.com.vn/uploads/dish/6242c5934eefec-trsaphclongtrlongsaphclong.png"
-                            style="">
-
-                        <div class="item-info">
-                            <div class="item-name">Trà Ô Long Sữa</div>
-
-                            <div class="item-desc">
-                                Oolong Milk Tea
-                            </div>
-                            <div class="item-price">45.000 đ</div>
-                            <button class="btn btn-default add-to-cart" data-id="114" data-name="Trà Ô Long Sữa"
-                                data-price="45000">Đặt hàng</button>
-                        </div>
-                    </a>
-                </div>
-
             </div>
 
         </div>
@@ -1105,6 +382,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+    <script src="./js/javascript.js"></script>
 
 </body>
 

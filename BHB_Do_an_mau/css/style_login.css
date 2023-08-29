@@ -103,7 +103,7 @@ input[type="submit"]:hover {
 
 .signup__button {
     height: 180px;
-    font-size: 20px;
+    font-size: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -116,5 +116,6 @@ input[type="submit"]:hover {
 
 .signup__button a {
     color: #0c713d;
+    text-decoration: underline;
 }
 
