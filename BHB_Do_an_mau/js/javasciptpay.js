@@ -52,6 +52,7 @@ function renderTotal(arr) {
             allTotal.innerHTML = totalsub;
         }
     }
+    renderTotalSub1(arr)
 }
 function renderShop(arr) {
     cartList.innerHTML = '';
@@ -108,6 +109,69 @@ const remove = (id) => {
     }
     localStorage.setItem("currents", JSON.stringify(productListCurrent));
     renderShop(productListCurrent);
+}
+
+function renderTotalSub1(arr) {
+    var allTotal1 = document.getElementById('total');
+    var total = 0; // Khởi tạo biến total trước vòng lặp
+    if (arr.length === 0) {
+        var totalsub = '0 đ';
+        allTotal1.innerHTML = totalsub;
+    } else {
+        for (let i = 0; i < arr.length; i++) {
+            const p = arr[i];
+            total += p.quantity * p.price; // Cộng dồn tổng tiền
+
+            // Gán giá trị tổng vào biến totalsub
+            var totalsub = `${total.toLocaleString()} đ`;
+
+            // Cập nhật giá trị tổng trên giao diện sau mỗi lần tính toán
+            allTotal1.innerHTML = totalsub;
+        }
+    }
+    renderTotalSub2(arr)
+}
+function renderTotalSub2(arr) {
+    var allTotal1 = document.getElementById('total1');
+    var total = 0; // Khởi tạo biến total trước vòng lặp
+    if (arr.length === 0) {
+        var totalsub = '0 đ';
+        allTotal1.innerHTML = totalsub;
+    } else {
+        for (let i = 0; i < arr.length; i++) {
+            const p = arr[i];
+            total += p.quantity * p.price; // Cộng dồn tổng tiền
+
+            // Gán giá trị tổng vào biến totalsub
+            var totalsub = `${total.toLocaleString()} đ`;
+
+            // Cập nhật giá trị tổng trên giao diện sau mỗi lần tính toán
+            allTotal1.innerHTML = totalsub;
+        }
+    }
+    renderBoxLeft(arr)
+}
+function renderBoxLeft(arr) {
+    boxLeft.innerHTML = '';
+    for (let i = 0; i < arr.length; i++) {
+        const p = arr[i];
+        boxLeft.innerHTML += `
+        <div class="box_show">
+                            <div class="box_show_img">
+                                <img src="${p.img}"
+                                    width="30%" alt="...">
+                            </div>
+                            <div class="box_show_text">
+                                <div class="box_show_top">
+                                ${p.name}
+                                </div>
+                                <div class="box_show_bottom">
+                                ${p.quantity} x ${p.price.toLocaleString()}
+                                </div>
+                            </div>
+                        </div>
+        `;
+    }
 }
 
 renderShop(items);
