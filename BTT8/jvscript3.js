@@ -1,15 +1,15 @@
 function login() {
-    window.location.replace('/index.html');
+    window.location.replace('/BHB_Do_an_mau/index.html');
 }
 
 function sign() {
-    window.location.replace('/index1.html');
+    window.location.replace('/BHB_Do_an_mau/index1.html');
 }
 function home() {
-    window.location.replace('/index2.html');
+    window.location.replace('/BHB_Do_an_mau/index2.html');
 }
 function shop() {
-    window.location.replace('/index3.html');
+    window.location.replace('/BHB_Do_an_mau/index3.html');
 }
 
 

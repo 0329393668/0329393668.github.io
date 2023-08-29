@@ -9,17 +9,17 @@ const products = [
   { id: 8, name: 'iPhone 11', price: 10680000, colorPc: 'black', count: 1, category: 'iphone', img: 'https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/4/17/638173197260604063_iphone-11-dd.jpg' }
 ];
 function login() {
-  window.location.replace('/index.html');
+  window.location.replace('/BHB_Do_an_mau/index.html');
 }
 
 function sign() {
-  window.location.replace('/index1.html');
+  window.location.replace('/BHB_Do_an_mau/index1.html');
 }
 function home() {
-  window.location.replace('/index2.html');
+  window.location.replace('/BHB_Do_an_mau/index2.html');
 }
 function shop() {
-  window.location.replace('/index3.html');
+  window.location.replace('/BHB_Do_an_mau/index3.html');
 }
 // số lượng 
 const current = localStorage.getItem('currents');

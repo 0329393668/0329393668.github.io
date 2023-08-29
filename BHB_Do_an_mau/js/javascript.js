@@ -1,23 +1,23 @@
 function login() {
-    window.location.replace('/login.html');
+    window.location.replace('/BHB_Do_an_mau/login.html');
 }
 function home() {
-    window.location.replace('/index.html');
+    window.location.replace('/BHB_Do_an_mau/index.html');
 }
 function cafe() {
-    window.location.replace('/cafe.html');
+    window.location.replace('/BHB_Do_an_mau/cafe.html');
 }
 function tea() {
-    window.location.replace('/tea.html');
+    window.location.replace('/BHB_Do_an_mau/tea.html');
 }
 function menu() {
-    window.location.replace('/menu.html');
+    window.location.replace('/BHB_Do_an_mau/menu.html');
 }
 function pay() {
-    window.location.replace('/pay.html');
+    window.location.replace('/BHB_Do_an_mau/pay.html');
 }
 function cart() {
-    window.location.replace('/card.html');
+    window.location.replace('/BHB_Do_an_mau/card.html');
 }
 
 const products = [
