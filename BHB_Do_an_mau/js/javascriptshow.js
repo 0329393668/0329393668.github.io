@@ -23,6 +23,14 @@ function cart() {
 var itemsJSON = localStorage.getItem('currents');
 // Chuyển đổi chuỗi JSON thành mảng
 var items = JSON.parse(itemsJSON);
+if (items == null) {
+    const productListCurrent = [];
+    localStorage.setItem("currents", JSON.stringify(productListCurrent));
+    // Lấy chuỗi JSON từ localStorage
+    var itemsJSON = localStorage.getItem('currents');
+    // Chuyển đổi chuỗi JSON thành mảng
+    var items = JSON.parse(itemsJSON);
+}
 const cartList = document.querySelector('.cart-list');
 const boxLeft = document.getElementById('box-left_show');
 
@@ -165,4 +173,5 @@ function renderBoxLeft(arr) {
         `;
     }
 }
+
 renderShop(items);

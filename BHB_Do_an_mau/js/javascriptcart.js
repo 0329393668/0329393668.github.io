@@ -62,7 +62,6 @@ function renderCart(arr) {
         // Xử lý sự kiện khi nhấn vào nút tăng
         increaseBtn.addEventListener('click', () => {
             quantity++; // Tăng số lượng lên 1
-            console.log(quantity);
             localStorage.setItem('quantity', quantity.toString());
             quantityElement.textContent = quantity; // Cập nhật giá trị số lượng mới
 

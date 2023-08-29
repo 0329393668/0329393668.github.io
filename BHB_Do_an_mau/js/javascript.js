@@ -197,7 +197,6 @@ searchButton.addEventListener('click', function (event) {
     searchInput.value = '';
 });
 function renderShopData() {
-    console.log('render shop')
     // Lấy chuỗi JSON từ localStorage
     var itemsJSON = localStorage.getItem('currents');
     // Chuyển đổi chuỗi JSON thành mảng
