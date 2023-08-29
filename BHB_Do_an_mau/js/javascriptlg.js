@@ -11,14 +11,14 @@ function createAccount(username, password) {
 }
 
 function login() {
-    window.location.replace('/login.html');
+    window.location.replace('/BHB_Do_an_mau/login.html');
 }
 
 function sign() {
-    window.location.replace('/signup.html');
+    window.location.replace('/BHB_Do_an_mau/signup.html');
 }
 function home() {
-    window.location.replace('/index.html');
+    window.location.replace('/BHB_Do_an_mau/index.html');
 }
 
 
@@ -31,7 +31,7 @@ form.addEventListener('submit', function (event) {
     if (data.username === username && data.password === password) {
         swal("Đăng nhập thành công!", "", "success");
         setTimeout(function () {
-            window.location.replace('/index.html');
+            window.location.replace('/BHB_Do_an_mau/index.html');
         }, 1500);
     } else {
         swal("Tên đăng nhập hoặc mật khẩu không chính xác!", "", "error");
@@ -47,7 +47,7 @@ form.addEventListener('submit', function (event) {
         createAccount(username, password);
         swal("Tài khoản đã được tạo thành công!", "", "success");
         setTimeout(function () {
-            window.location.replace('/login.html');
+            window.location.replace('/BHB_Do_an_mau/login.html');
             form.reset();
         }, 1500);
     } else {
