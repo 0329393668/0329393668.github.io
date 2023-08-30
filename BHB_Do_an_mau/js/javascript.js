@@ -303,13 +303,6 @@ function renderProduct(product) {
                                                         <a href="javascript:void(0);" class="ng-binding">Ice regular size
                                                         </a>
                                                     </li>
-                                                    <!-- end ngIf: size.price >= 0 --><!-- end ngRepeat: size in productSizes --><!-- ngIf: size.price >= 0 -->
-                                                    <li ng-if="size.price >= 0" ng-repeat="size in productSizes"
-                                                        ng-class="{active : productSize === size }"
-                                                        ng-click="changeSize(size)" class="ng-scope">
-                                                        <a href="javascript:void(0);" class="ng-binding">Big size ice </a>
-                                                    </li>
-                                                    <!-- end ngIf: size.price >= 0 --><!-- end ngRepeat: size in productSizes -->
                                                 </ul>
     
     
@@ -339,7 +332,7 @@ function renderProduct(product) {
                                         <div class="product-action">
     
                                             <button id="add-to-cart-dh" class="btn btn-default add-to-cart single" data-id="${product.id}"
-                                                data-dismiss="modal">Đặt hàng</button>
+                                            data-bs-dismiss="modal" >Đặt hàng</button>
     
                                             <!--        <a name="checkout" class="btn btn-default" href="https://phuclong.com.vn/thanh-toan"> Thanh toán</a> -->
     
@@ -383,8 +376,7 @@ function renderProduct(product) {
         updatePrice(quantityElement.textContent);
     })
 
-
-    var button = document.getElementById('add-to-cart-dh');
+    const button = document.getElementById('add-to-cart-dh');
     button.addEventListener('click', function () {
         var storedObject = localStorage.getItem('current');
         var retrievedObject = JSON.parse(storedObject);
@@ -409,6 +401,7 @@ function renderProduct(product) {
             }
         }
         localStorage.setItem("currents", JSON.stringify(productListCurrent));
+        // modal.style.display = 'none';
         renderShopData()
     });
 

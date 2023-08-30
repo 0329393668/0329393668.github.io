@@ -30,6 +30,10 @@ form.addEventListener('submit', function (event) {
     const data = JSON.parse(newAccount);
     if (data.username === username && data.password === password) {
         swal("Đăng nhập thành công!", "", "success");
+        localStorage.setItem('currentUser',JSON.stringify({
+            username,
+            name: 'Đức Anh'
+        }));
         setTimeout(function () {
             window.location.replace('/BHB_Do_an_mau/index.html');
         }, 1500);

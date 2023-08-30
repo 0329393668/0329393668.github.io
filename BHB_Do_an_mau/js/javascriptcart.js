@@ -31,7 +31,7 @@ function renderCart(arr) {
         <div class="carl__product col-md-3">
             <img src="${p.img}"
                 width="20%" alt="Ảnh">
-            <strong>${p.name}</strong>
+            <strong>${p.name} <br> Ice regular size </strong>
         </div>
         <div class="cart__price col-md-9 card__sub">
             <div class="cart__price-item col-md-3" style="font-size: 18px;">${p.price.toLocaleString()} đ</div>

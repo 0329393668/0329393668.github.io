@@ -164,6 +164,8 @@ function renderBoxLeft(arr) {
                             <div class="box_show_text">
                                 <div class="box_show_top">
                                 ${p.name}
+                                <br>
+                                Ice regular size
                                 </div>
                                 <div class="box_show_bottom">
                                 ${p.quantity} x ${p.price.toLocaleString()}
@@ -173,5 +175,27 @@ function renderBoxLeft(arr) {
         `;
     }
 }
+
+const paymentButton = document.getElementById('paymentButton');
+const policy = document.getElementById('policy');
+policy.addEventListener('change', () => {
+    paymentButton.disabled = policy.checked ? false : true;
+})
+paymentButton.addEventListener('click', function () {
+    const itemsJSONCheck = localStorage.getItem('currents');
+    const itemsCheck = JSON.parse(itemsJSONCheck);
+    if (itemsCheck.length !== 0) {
+        const itemsCheck = [];
+        localStorage.setItem("currents", JSON.stringify(itemsCheck));
+        swal({
+            title: "Thanh toán thành công!",
+            text: "",
+            icon: "success",
+            button: "Đóng",
+        }).then(function () {
+            window.location.replace('/BHB_Do_an_mau/pay.html');
+        });
+    }
+});
 
 renderShop(items);
