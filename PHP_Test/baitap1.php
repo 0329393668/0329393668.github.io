@@ -8,7 +8,7 @@
 </head>
 
 <body>
-
+    <!-- Bài Tập 1 -->
     <h1>Kiểm tra tính chẵn lẻ của 1 số</h1>
     <?php
     $number = rand(10, 100);
@@ -23,6 +23,7 @@
         <?php echo $result; ?>.
     </p>
 
+    <!-- Bài Tập 2 -->
     <h1>Tính điểm</h1>
     <?php
     $score = 85;
@@ -48,6 +49,47 @@
         <?php echo $grade; ?>
     </p>
 
+    <!-- Bài Tập 3 -->
+
+    <?php
+    // Khởi tạo biến lưu trữ thông báo
+    $message = "";
+    // Kiểm tra xem người dùng đã nhấp vào nút đăng nhập chưa
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Lấy giá trị từ trường username và password
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+
+        // Kiểm tra xem username và password có đúng không
+        $expected_username = "admin";
+        $expected_password = "password";
+
+        if ($username == $expected_username && $password == $expected_password) {
+            // Gán thông báo thành công vào biến $message
+            $message = "Đăng nhập thành công!";
+        } else {
+            // Gán thông báo lỗi vào biến $message
+            $message = "Tên đăng nhập hoặc mật khẩu không đúng!";
+        }
+    }
+    ?>
+    <h1>Login Form</h1>
+    <form action="#" method="post">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required><br>
+
+        <input type="submit" value="Login">
+    </form>
+    <?php
+    if (!empty($message)) {
+        echo "<p style='color: " . ($message == "Đăng nhập thành công!" ? "green" : "red") . ";'>$message</p>";
+    }
+    ?>
+
+    <!-- Bài tập 1 -->
     <h1>Độ tuổi đăng ký</h1>
     <?php
     // TODO: Kiểm tra tuổi của người dùng và hiển thị thông báo phù hợp.
@@ -61,6 +103,7 @@
     }
     ?>
 
+    <!-- Bài tập 2 -->
     <h1>Kiểm tra điểm số</h1>
     <?php
     // TODO: Kiểm tra điểm số và hiển thị thông báo tương ứng.
