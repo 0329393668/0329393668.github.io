@@ -221,6 +221,122 @@
         echo "<p style='color: " . ($message == "Dữ liệu hợp lệ!" ? "green" : "red") . ";'>$message</p>";
     }
     ?>
+
+    <!-- Tạo mẫu in thông tin -->
+
+    <h2>Đăng ký người dùng</h2>
+    <form method="post" action="">
+        <label for="fullname">Họ và tên:</label>
+        <input type="text" id="fullname" name="fullname" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Mật khẩu:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="Đăng ký">
+    </form>
+    <?php
+    // Kiểm tra xem có dữ liệu được gửi từ form hay không
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Lấy dữ liệu từ form
+        $fullname = $_POST["fullname"];
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+
+        // Hiển thị thông tin người dùng đã đăng ký
+        echo "<h2>Thông tin người dùng đã đăng ký:</h2>";
+        echo "<p><strong>Họ và tên:</strong> " . $fullname . "</p>";
+        echo "<p><strong>Email:</strong> " . $email . "</p>";
+        echo "<p><strong>Mật khẩu:</strong> " . $password . "</p>";
+    }
+    ?>
+
+    <!-- Đăng kí tài khoản -->
+    <?php
+    function validateRegistration($fullname, $email, $password)
+    {
+        $errors = array();
+
+        // Kiểm tra họ và tên
+        if (empty($fullname)) {
+            $errors[] = "Họ và tên không được để trống.";
+        } else {
+            // Kiểm tra số từ
+            $wordCount = str_word_count($fullname);
+            if ($wordCount < 2) {
+                $errors[] = "Họ và tên cần ít nhất 2 từ.";
+            }
+
+            // Kiểm tra ký tự đặc biệt và số
+            if (!preg_match('/^[A-Za-z\s]+$/', $fullname)) {
+                $errors[] = "Họ và tên không được chứa ký tự đặc biệt hoặc số.";
+            }
+        }
+
+        // Kiểm tra email
+        if (empty($email)) {
+            $errors[] = "Email không được để trống.";
+        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $errors[] = "Email không hợp lệ.";
+        }
+
+        // Kiểm tra mật khẩu
+        if (empty($password)) {
+            $errors[] = "Mật khẩu không được để trống.";
+        } else {
+            // Kiểm tra độ dài
+            if (strlen($password) < 8) {
+                $errors[] = "Mật khẩu cần ít nhất 8 ký tự.";
+            }
+
+            // Kiểm tra chữ cái viết hoa, chữ cái viết thường và số
+            if (!preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]+$/", $password)) {
+                $errors[] = "Mật khẩu cần chứa ít nhất một chữ cái viết hoa, một chữ cái viết thường, một số và một ký tự đặc biệt.";
+            }
+        }
+
+        // Kiểm tra và trả về kết quả
+        if (empty($errors)) {
+            return "Đăng ký thành công.";
+        } else {
+            return $errors;
+        }
+    }
+    ?>
+    <h2>Đăng ký người dùng</h2>
+    <form method="post" action="">
+        <label for="fullname">Họ và tên:</label>
+        <input type="text" id="fullname" name="fullname" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Mật khẩu:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="Đăng ký">
+    </form>
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $fullname = $_POST["fullname"];
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+
+        $result = validateRegistration($fullname, $email, $password);
+
+        if (is_array($result)) {
+            // Hiển thị thông báo lỗi
+            foreach ($result as $error) {
+                echo "<p>Error: " . $error . "</p>";
+            }
+        } else {
+            // Hiển thị thông báo thành công
+            echo "<p>Success: " . $result . "</p>";
+        }
+    }
+    ?>
 </body>
 
 </html>
